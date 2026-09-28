@@ -200,16 +200,6 @@ const Intro = () => {
         </div>
 
       </div>
-
-      {/* Subtle bottom scroll indicator */}
-      <div className="flex justify-center pb-8">
-        <a href="#skills" className="text-slate-500 hover:text-cyan-400 transition-colors flex flex-col items-center gap-1 text-xs">
-          <span>Scroll to explore</span>
-          <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
-      </div>
     </section>
   );
 };
