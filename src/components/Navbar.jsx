@@ -43,17 +43,17 @@ const Navbar = () => {
       <div 
         className={`w-full rounded-full transition-all duration-300 px-3.5 sm:px-5 py-2 flex items-center justify-between border ${
           scrolled 
-            ? 'bg-[#090d16]/90 backdrop-blur-2xl border-slate-700/80 shadow-[0_12px_36px_rgba(0,0,0,0.6)]' 
-            : 'bg-[#0a0f1d]/75 backdrop-blur-xl border-slate-800/80 shadow-[0_8px_28px_rgba(0,0,0,0.4)]'
+            ? 'bg-zinc-950/90 backdrop-blur-2xl border-zinc-800/80 shadow-[0_12px_36px_rgba(0,0,0,0.6)]' 
+            : 'bg-zinc-900/75 backdrop-blur-xl border-zinc-800/80 shadow-[0_8px_28px_rgba(0,0,0,0.4)]'
         }`}
       >
         {/* Brand Monogram / Name */}
         <a 
           href="#intro" 
-          className="text-sm font-bold tracking-tight text-white hover:text-cyan-400 transition-colors pl-1 flex items-center gap-1 group"
+          className="text-sm font-bold tracking-tight text-white hover:text-white transition-colors pl-1 flex items-center gap-1 group"
         >
           <span>Khushi</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform"></span>
+          <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 group-hover:scale-125 transition-transform"></span>
         </a>
 
         {/* Center Nav Links - Desktop */}
@@ -66,8 +66,8 @@ const Navbar = () => {
                 href={link.href}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                   isActive
-                    ? 'text-cyan-300 bg-cyan-950/50 border border-cyan-800/40 shadow-inner'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                    ? 'text-white bg-zinc-800/80 border border-zinc-700/50 shadow-inner'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
                 }`}
               >
                 {link.name}
@@ -80,7 +80,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
-            className="px-3.5 py-1.5 rounded-full bg-cyan-500 text-slate-950 font-bold text-xs hover:bg-cyan-400 transition-all active:scale-95 shadow-md shadow-cyan-500/20"
+            className="px-3.5 py-1.5 rounded-full bg-white text-zinc-950 font-bold text-xs hover:bg-zinc-400 transition-all active:scale-95 shadow-md shadow-white/10"
           >
             Hire Me
           </a>
@@ -88,7 +88,7 @@ const Navbar = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden p-1.5 rounded-full text-slate-300 hover:text-white hover:bg-slate-800/60"
+            className="sm:hidden p-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800/60"
             aria-label="Toggle navigation"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ const Navbar = () => {
 
       {/* Mobile Capsule Dropdown */}
       {mobileMenuOpen && (
-        <div className="sm:hidden mt-2 p-3 rounded-2xl bg-[#090d16]/95 backdrop-blur-2xl border border-slate-700/80 shadow-2xl space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="sm:hidden mt-2 p-3 rounded-2xl bg-zinc-950/95 backdrop-blur-2xl border border-zinc-800/80 shadow-2xl space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -112,8 +112,8 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-4 py-2 rounded-xl text-xs font-medium transition-colors ${
                 activeSection === link.id
-                  ? 'text-cyan-300 bg-cyan-950/40'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  ? 'text-white bg-zinc-800/80'
+                  : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
               }`}
             >
               {link.name}
@@ -126,3 +126,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
