@@ -1,390 +1,242 @@
 import React, { useState } from 'react';
 
-const projectsList = [
+const projects = [
   {
+    id: 1,
     title: "Kumar Music E-Commerce",
     category: "Full-Stack MERN Platform",
-    filterTag: "E-Commerce",
-    shortDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, and real-time inventory management.",
-    fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, admin dashboard for order processing, and comprehensive sales analytics.",
-    tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
-    liveUrl: "https://github.com/myselfkhushi",
-    githubUrl: "https://github.com/myselfkhushi",
-    bannerType: "music"
-  },
-  {
-    title: "Enterprise Multi-Tenant CRM",
-    category: "Business Automation Platform",
-    filterTag: "SaaS & CRM",
-    shortDesc: "Custom enterprise CRM featuring role-based access control, pipeline stage tracking, client document management, and real-time telemetry.",
-    fullDesc: "Custom enterprise CRM featuring role-based access control, pipeline stage tracking, client document management, real-time telemetry, automated email notifications, and detailed conversion reporting for multi-agent teams.",
+    shortDesc: "A complete full-stack e-commerce web platform for music merchandise, instruments, and audio gear. Features user authentication, dynamic product catalog, cart management, and order checkout.",
+    fullDesc: "A complete full-stack e-commerce web platform for music merchandise, instruments, and audio gear. Features user authentication, dynamic product catalog with search and price filtering, responsive shopping cart drawer, mock payment checkout, and an admin dashboard to manage product inventory.",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    liveUrl: "https://github.com/myselfkhushi",
     githubUrl: "https://github.com/myselfkhushi",
-    bannerType: "crm"
+    liveUrl: "https://github.com/myselfkhushi",
+    bannerType: "kumar",
   },
   {
-    title: "B2B SaaS Business Engine",
-    category: "Cloud & Distributed Systems",
-    filterTag: "SaaS & CRM",
-    shortDesc: "Containerized multi-tenant SaaS application with strict database isolation, tenant telemetry, automated billing, and microservices architecture.",
-    fullDesc: "Containerized multi-tenant SaaS application with strict database isolation, tenant telemetry, automated billing, and microservices architecture deployed with Docker containers on AWS infrastructure.",
-    tags: ["Docker", "PostgreSQL", "Node.js", "AWS", "REST API"],
-    liveUrl: "https://github.com/myselfkhushi",
+    id: 2,
+    title: "StreamFlix Cinema",
+    category: "Frontend Web Application",
+    shortDesc: "A responsive movie browsing and trailer discovery application integrated with TMDB API. Includes trending feeds, genre filters, and modal video previews.",
+    fullDesc: "A responsive movie browsing and trailer discovery application integrated with TMDB API. Includes trending feeds, genre filters, responsive hero banners, movie trailer previews, and watchlists.",
+    tags: ["React.js", "Tailwind CSS", "TMDB API", "Axios"],
     githubUrl: "https://github.com/myselfkhushi",
-    bannerType: "saas"
+    liveUrl: "https://github.com/myselfkhushi",
+    bannerType: "streamflix",
   },
   {
-    title: "Real-Time Operations & Task Hub",
-    category: "Startup Operations MVP",
-    filterTag: "SaaS & CRM",
-    shortDesc: "Reactive live monitoring dashboard built with responsive React interfaces, Redux state management, webhook notifications, and automated reporting.",
-    fullDesc: "Reactive live monitoring dashboard built with responsive React interfaces, Redux state management, webhook notifications, and automated reporting designed for agile development squads.",
-    tags: ["React.js", "Redux", "Express.js", "REST API", "Tailwind CSS"],
-    liveUrl: "https://github.com/myselfkhushi",
+    id: 3,
+    title: "DevDesk Project Tracker",
+    category: "Full-Stack Workflow Tool",
+    shortDesc: "A streamlined task and project tracking board. Supports multi-column Kanban workflows, priority tags, deadline reminders, and responsive dashboards.",
+    fullDesc: "A streamlined task and project tracking board built with the MERN stack. Supports multi-column Kanban workflows, priority tags, status updates, deadline reminders, and clean RESTful API integration for smooth state persistence.",
+    tags: ["React.js", "Express.js", "Node.js", "MongoDB"],
     githubUrl: "https://github.com/myselfkhushi",
-    bannerType: "tasks"
+    liveUrl: "https://github.com/myselfkhushi",
+    bannerType: "devdesk",
   },
   {
-    title: "Payment Gateway Microservice",
-    category: "Fintech & API Architecture",
-    filterTag: "Fintech & APIs",
-    shortDesc: "Secure transaction processing microservice with idempotent webhooks, ledger transaction logging, and automated invoice PDF generation.",
-    fullDesc: "Secure transaction processing microservice with idempotent webhooks, ledger transaction logging, rate-limited public APIs, and automated invoice PDF generation with 99.9% uptime reliability.",
-    tags: ["TypeScript", "Node.js", "PostgreSQL", "Docker", "REST API"],
-    liveUrl: "https://github.com/myselfkhushi",
+    id: 4,
+    title: "FinTrack Expense Manager",
+    category: "Dashboard & Analytics",
+    shortDesc: "A personal finance and expense tracking tool with visual category breakdowns, monthly spending graphs, and transaction export.",
+    fullDesc: "A personal finance and expense tracking tool featuring visual category breakdowns, monthly spending graphs, budget progress bars, and CSV export. Built with responsive React components and interactive charts.",
+    tags: ["React.js", "Tailwind CSS", "Chart.js", "REST APIs"],
     githubUrl: "https://github.com/myselfkhushi",
-    bannerType: "fintech"
-  },
-  {
-    title: "Portfolio Experience",
-    category: "Interactive Web Platform",
-    filterTag: "Frontend",
-    shortDesc: "Interactive portfolio engineered with React, GSAP physics, ocean blue gradients, custom precision cursor, and responsive bento layouts.",
-    fullDesc: "Interactive portfolio engineered with React, GSAP physics, ocean blue gradients, custom precision cursor, responsive bento layouts, and smooth spring physics.",
-    tags: ["React.js", "GSAP", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://github.com/myselfkhushi",
-    githubUrl: "https://github.com/myselfkhushi",
-    bannerType: "portfolio"
+    bannerType: "fintrack",
   }
 ];
 
-// Project Banner Renderers
 const ProjectBanner = ({ type }) => {
-  if (type === "music") {
+  if (type === "kumar") {
     return (
-      <div className="relative w-full h-[220px] bg-gradient-to-br from-[#120a2e] via-[#1a1238] to-[#070b14] overflow-hidden flex flex-col justify-between p-5 border-b border-white/10 select-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-36 bg-blue-600/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-10 right-4 w-40 h-40 bg-purple-600/20 rounded-full blur-2xl pointer-events-none" />
-
-        <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-white/70">
-          <span className="font-black text-white flex items-center gap-1.5 tracking-wider font-['Outfit']">
+      <div className="relative w-full h-44 bg-gradient-to-tr from-[#120f2e] via-[#1a1444] to-[#0d1527] p-5 flex flex-col justify-between border-b border-slate-800">
+        <div className="flex items-center justify-between text-xs text-slate-400">
+          <span className="font-bold text-white flex items-center gap-1.5">
             <span className="text-purple-400">✦</span> Kumar Visuals
           </span>
-          <div className="hidden sm:flex items-center gap-3 text-[10px] text-white/50">
-            <span>HOME</span>
-            <span>SHOP</span>
-            <span>MEMBERSHIP</span>
-          </div>
-          <span className="px-2 py-0.5 rounded-full bg-purple-600/30 border border-purple-500/40 text-purple-300 text-[9px] uppercase font-bold">
-            Live Platform
+          <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">
+            E-Commerce
           </span>
         </div>
-
-        <div className="relative z-10 my-auto text-center space-y-1">
-          <h2 
-            className="text-3xl sm:text-4xl font-black italic tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-300 to-indigo-400 drop-shadow-[0_4px_16px_rgba(99,102,241,0.6)] font-['Outfit']"
-          >
-            Kumar Visuals
-          </h2>
-          <p className="text-[10px] text-white/60 tracking-wider font-mono">
-            PREMIUM AUDIO HUB &bull; MERN PLATFORM
-          </p>
+        <div className="my-auto text-center">
+          <p className="text-2xl font-bold tracking-tight text-white">Kumar Music Store</p>
+          <p className="text-xs text-slate-400 mt-1">Full-Stack MERN Audio Gear Platform</p>
         </div>
-
-        <div className="relative z-10 flex items-center justify-between pt-2 border-t border-white/10 text-[10px] font-mono">
-          <div className="flex items-center gap-3">
-            <span className="text-white/80"><strong className="text-purple-300">100+</strong> Releases</span>
-            <span className="text-white/80"><strong className="text-blue-300">1K+</strong> Listeners</span>
-          </div>
-          <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-[9px] font-bold">
-            1.9K ★ Rating
-          </span>
+        <div className="flex items-center justify-between text-[11px] text-slate-500">
+          <span>Cart &bull; Auth &bull; Admin</span>
+          <span className="text-cyan-400 font-mono">v1.2</span>
         </div>
       </div>
     );
   }
 
-  if (type === "crm") {
+  if (type === "streamflix") {
     return (
-      <div className="relative w-full h-[220px] bg-gradient-to-br from-[#071626] via-[#0b1d30] to-[#04080e] overflow-hidden flex flex-col justify-between p-5 border-b border-white/10 select-none">
-        <div className="absolute top-0 right-10 w-60 h-32 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-cyan-400">
-          <span className="font-bold flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> Enterprise CRM
+      <div className="relative w-full h-44 bg-gradient-to-tr from-[#1f0d14] via-[#2a131b] to-[#0c121e] p-5 flex flex-col justify-between border-b border-slate-800">
+        <div className="flex items-center justify-between text-xs text-slate-400">
+          <span className="font-bold text-red-500 flex items-center gap-1.5">
+            <span>▶</span> STREAMFLIX
           </span>
-          <span className="text-white/50 text-[10px]">99.9% Uptime</span>
-        </div>
-
-        <div className="relative z-10 my-auto grid grid-cols-3 gap-2">
-          <div className="p-2.5 rounded-xl bg-white/5 border border-cyan-500/20">
-            <span className="text-[9px] text-white/50 font-mono block">Leads</span>
-            <span className="text-lg font-black text-cyan-300 font-['Outfit']">1,248</span>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/5 border border-cyan-500/20">
-            <span className="text-[9px] text-white/50 font-mono block">Conversion</span>
-            <span className="text-lg font-black text-white font-['Outfit']">+28.4%</span>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/5 border border-cyan-500/20">
-            <span className="text-[9px] text-white/50 font-mono block">Pipeline</span>
-            <span className="text-lg font-black text-blue-400 font-['Outfit']">$340K</span>
-          </div>
-        </div>
-
-        <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-white/50 pt-2 border-t border-white/10">
-          <span>PIPELINE TELEMETRY</span>
-          <span className="text-cyan-400">ACTIVE</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "saas") {
-    return (
-      <div className="relative w-full h-[220px] bg-gradient-to-br from-[#0a192f] via-[#0d1f38] to-[#050b14] overflow-hidden flex flex-col justify-between p-5 border-b border-white/10 select-none">
-        <div className="absolute bottom-0 left-10 w-60 h-32 bg-blue-600/25 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-blue-400">
-          <span className="font-bold">B2B SaaS Multi-Tenant</span>
-          <span className="px-2 py-0.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-[9px] text-blue-300">AWS + Docker</span>
-        </div>
-
-        <div className="relative z-10 my-auto space-y-2">
-          <div className="flex items-center justify-between text-xs">
-            <span className="text-white/70 font-mono text-[11px]">Database Isolation</span>
-            <span className="text-cyan-400 font-mono text-[10px] font-bold">100% Encrypted</span>
-          </div>
-          <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-            <div className="w-4/5 h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" />
-          </div>
-          <div className="flex items-center justify-between text-[10px] text-white/50 font-mono">
-            <span>Cluster: us-east-1</span>
-            <span>Microservices: 8/8 healthy</span>
-          </div>
-        </div>
-
-        <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-white/50 pt-2 border-t border-white/10">
-          <span>TENANT TELEMETRY</span>
-          <span className="text-blue-400">ISOLATED</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "tasks") {
-    return (
-      <div className="relative w-full h-[220px] bg-gradient-to-br from-[#0c1824] via-[#102234] to-[#060c14] overflow-hidden flex flex-col justify-between p-5 border-b border-white/10 select-none">
-        <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-cyan-300">
-          <span className="font-bold">Operations Hub</span>
-          <span className="text-white/50 text-[10px]">Real-Time Sync</span>
-        </div>
-
-        <div className="relative z-10 my-auto flex gap-2">
-          <div className="flex-1 p-2 rounded-xl bg-white/5 border border-white/10 space-y-1">
-            <span className="text-[9px] font-mono text-cyan-400">IN PROGRESS</span>
-            <p className="text-[11px] font-bold text-white">Order Pipeline</p>
-          </div>
-          <div className="flex-1 p-2 rounded-xl bg-white/5 border border-white/10 space-y-1">
-            <span className="text-[9px] font-mono text-blue-400">REVIEW</span>
-            <p className="text-[11px] font-bold text-white">Inventory Sync</p>
-          </div>
-          <div className="flex-1 p-2 rounded-xl bg-white/5 border border-white/10 space-y-1">
-            <span className="text-[9px] font-mono text-emerald-400">DEPLOYED</span>
-            <p className="text-[11px] font-bold text-white">Auth V2</p>
-          </div>
-        </div>
-
-        <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-white/50 pt-2 border-t border-white/10">
-          <span>SPRINT OPERATIONS</span>
-          <span className="text-emerald-400">CONNECTED</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "fintech") {
-    return (
-      <div className="relative w-full h-[220px] bg-gradient-to-br from-[#091522] via-[#0d2035] to-[#050b12] overflow-hidden flex flex-col justify-between p-5 border-b border-white/10 select-none">
-        <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-cyan-400">
-          <span className="font-bold">Fintech Microservice</span>
-          <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[9px]">Idempotent API</span>
-        </div>
-
-        <div className="relative z-10 my-auto p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-          <div>
-            <span className="text-[9px] font-mono text-white/50 block">TX ID: #9834-MERN</span>
-            <span className="text-lg font-black text-white font-['Outfit']">$12,480.00</span>
-          </div>
-          <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
-            Settled ✓
+          <span className="px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 text-[10px] font-medium border border-red-500/30">
+            Entertainment
           </span>
         </div>
+        <div className="my-auto text-center">
+          <p className="text-2xl font-bold tracking-tight text-white">Cinema Browser</p>
+          <p className="text-xs text-slate-400 mt-1">TMDB API &bull; Trailers &bull; Watchlists</p>
+        </div>
+        <div className="flex items-center justify-between text-[11px] text-slate-500">
+          <span>Dynamic Search</span>
+          <span className="text-red-400 font-mono">React App</span>
+        </div>
+      </div>
+    );
+  }
 
-        <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-white/50 pt-2 border-t border-white/10">
-          <span>WEBHOOK RECONCILIATION</span>
-          <span className="text-emerald-400">200 OK</span>
+  if (type === "devdesk") {
+    return (
+      <div className="relative w-full h-44 bg-gradient-to-tr from-[#0a1e24] via-[#0f2a33] to-[#09111c] p-5 flex flex-col justify-between border-b border-slate-800">
+        <div className="flex items-center justify-between text-xs text-slate-400">
+          <span className="font-bold text-teal-400 flex items-center gap-1.5">
+            <span>■</span> DevDesk
+          </span>
+          <span className="px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 text-[10px] font-medium border border-teal-500/30">
+            Productivity
+          </span>
+        </div>
+        <div className="my-auto text-center">
+          <p className="text-2xl font-bold tracking-tight text-white">Project Tracker</p>
+          <p className="text-xs text-slate-400 mt-1">Kanban &bull; Task Management &bull; REST API</p>
+        </div>
+        <div className="flex items-center justify-between text-[11px] text-slate-500">
+          <span>Agile Board</span>
+          <span className="text-teal-400 font-mono">MERN Stack</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-full h-[220px] bg-gradient-to-br from-[#06121f] via-[#0b1f33] to-[#040910] overflow-hidden flex flex-col justify-between p-5 border-b border-white/10 select-none">
-      <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-cyan-400">
-        <span className="font-bold">Portfolio Experience</span>
-        <span className="text-white/50 text-[10px]">React + GSAP</span>
+    <div className="relative w-full h-44 bg-gradient-to-tr from-[#0f1f14] via-[#14291c] to-[#09111c] p-5 flex flex-col justify-between border-b border-slate-800">
+      <div className="flex items-center justify-between text-xs text-slate-400">
+        <span className="font-bold text-emerald-400 flex items-center gap-1.5">
+          <span>↗</span> FinTrack
+        </span>
+        <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-medium border border-emerald-500/30">
+          Finance
+        </span>
       </div>
-
-      <div className="relative z-10 my-auto text-center space-y-1">
-        <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 font-['Outfit']">
-          Khushi Portfolio
-        </h3>
-        <p className="text-[11px] text-white/60 font-mono">Engineered with Precision & Physics</p>
+      <div className="my-auto text-center">
+        <p className="text-2xl font-bold tracking-tight text-white">Expense Tracker</p>
+        <p className="text-xs text-slate-400 mt-1">Analytics &bull; Monthly Budgets &bull; Graphs</p>
       </div>
-
-      <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-white/50 pt-2 border-t border-white/10">
-        <span>INTERACTIVE UI</span>
-        <span className="text-cyan-400">STREAMING</span>
+      <div className="flex items-center justify-between text-[11px] text-slate-500">
+        <span>Interactive Charts</span>
+        <span className="text-emerald-400 font-mono">Dashboard</span>
       </div>
     </div>
   );
 };
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [expandedCards, setExpandedCards] = useState({});
+  const [expandedId, setExpandedId] = useState(null);
 
-  const toggleExpand = (index) => {
-    setExpandedCards((prev) => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
+  const toggleExpand = (id) => {
+    setExpandedId(prev => (prev === id ? null : id));
   };
 
-  const filteredProjects = selectedCategory === "All"
-    ? projectsList
-    : projectsList.filter(p => p.filterTag === selectedCategory);
-
   return (
-    <section id="projects" className="bg-[#05080f] min-h-screen relative text-white w-full py-28 px-6 md:px-12 select-none border-t border-cyan-500/15">
-      
-      {/* Ambient Glows */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none z-0" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" />
-
-      <div className="relative z-10 max-w-7xl mx-auto w-full space-y-14">
+    <section id="projects" className="w-full py-24 bg-[#090d16] border-t border-slate-800/80 text-slate-100">
+      <div className="max-w-6xl mx-auto px-6">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
-          <div className="space-y-3 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-xl border border-cyan-500/30 text-xs font-mono tracking-wider text-cyan-400 shadow-xl">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-              <span>FEATURED WORKS</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight font-['Outfit']">
-              PRODUCTION PROJECTS <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 drop-shadow-[0_0_25px_rgba(14,165,233,0.35)]">
-                BUSINESS SYSTEMS & SAAS.
-              </span>
-            </h2>
-          </div>
-
-          {/* Interactive Filter Pills */}
-          <div className="flex flex-wrap gap-2 text-xs font-mono">
-            {["All", "E-Commerce", "SaaS & CRM", "Fintech & APIs"].map((filter) => (
-              <button
-                key={filter}
-                type="button"
-                onClick={() => setSelectedCategory(filter)}
-                className={`px-4 py-2 rounded-full border transition-all cursor-pointer ${
-                  selectedCategory === filter
-                    ? "bg-cyan-500 text-black border-cyan-400 font-bold shadow-[0_0_15px_rgba(56,189,248,0.4)]"
-                    : "bg-white/5 text-white/70 border-white/10 hover:border-cyan-400/40 hover:text-white"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+        {/* Header */}
+        <div className="flex flex-col items-start mb-14">
+          <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
+            Featured Work
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Projects
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+            A selection of web applications I have built, demonstrating full-stack architecture, clean UI, and responsive functionality.
+          </p>
         </div>
 
-        {/* Responsive Grid matching Image 4 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, idx) => {
-            const isExpanded = !!expandedCards[idx];
-
+        {/* Project Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((item) => {
+            const isExpanded = expandedId === item.id;
             return (
               <div
-                key={idx}
-                className="bg-[#0c121e] border border-cyan-500/20 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-cyan-400/60 hover:shadow-[0_20px_45px_rgba(14,165,233,0.18)] transition-all duration-300 group"
+                key={item.id}
+                className="rounded-2xl bg-slate-900/60 border border-slate-800/90 overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between shadow-xl"
               >
-                {/* Top Mockup Banner */}
-                <ProjectBanner type={project.bannerType} />
+                <div>
+                  {/* Visual Banner */}
+                  <ProjectBanner type={item.bannerType} />
 
-                {/* Card Body */}
-                <div className="p-7 flex flex-col justify-between flex-grow">
-                  
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-2">
-                      {project.category}
+                  {/* Body Content */}
+                  <div className="p-6">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400">
+                      {item.category}
                     </span>
-
-                    <h3 className="text-2xl font-black text-white group-hover:text-cyan-300 transition-colors leading-tight font-['Outfit']">
-                      {project.title}
+                    <h3 className="text-xl font-bold text-white mt-1 mb-3">
+                      {item.title}
                     </h3>
-
-                    <p className="text-white/70 text-sm leading-relaxed mt-3">
-                      {isExpanded ? project.fullDesc : project.shortDesc}
+                    
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      {isExpanded ? item.fullDesc : item.shortDesc}
                     </p>
 
                     <button
-                      type="button"
-                      onClick={() => toggleExpand(idx)}
-                      className="text-cyan-400 hover:text-cyan-300 text-xs font-mono font-medium mt-2 focus:outline-none cursor-pointer inline-block"
+                      onClick={() => toggleExpand(item.id)}
+                      className="mt-2 text-xs font-medium text-cyan-400 hover:text-cyan-300 underline underline-offset-4"
                     >
-                      {isExpanded ? 'Show less' : 'Read more'}
+                      {isExpanded ? "Show less" : "Read more"}
                     </button>
 
+                    {/* Tech Badges */}
                     <div className="flex flex-wrap gap-2 mt-5">
-                      {project.tags.map((tag, tIdx) => (
+                      {item.tags.map((tag) => (
                         <span
-                          key={tIdx}
-                          className="px-3 py-1 rounded-full bg-[#141e30] border border-white/10 text-xs font-mono text-white/80 group-hover:border-cyan-500/30 group-hover:text-cyan-200 transition-colors"
+                          key={tag}
+                          className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  <div className="mt-7 pt-5 border-t border-white/10 space-y-2">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-3.5 rounded-xl bg-white text-black font-bold text-sm flex items-center justify-center gap-2 hover:bg-cyan-400 hover:text-black transition-all duration-300 shadow-md group-hover:scale-[1.01]"
-                    >
-                      <svg className="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      Live Demo
-                    </a>
-                  </div>
-
                 </div>
+
+                {/* Card Actions */}
+                <div className="p-6 pt-0 flex items-center gap-3">
+                  <a
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 py-2.5 px-4 rounded-lg bg-cyan-500 text-slate-950 font-semibold text-xs text-center hover:bg-cyan-400 transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <span>Live Demo</span>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+
+                  <a
+                    href={item.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="py-2.5 px-4 rounded-lg bg-slate-800 text-slate-300 font-semibold text-xs hover:bg-slate-700 hover:text-white transition-colors border border-slate-700 flex items-center justify-center gap-1.5"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    <span>Code</span>
+                  </a>
+                </div>
+
               </div>
             );
           })}

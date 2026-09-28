@@ -1,32 +1,28 @@
-import { useState } from 'react';
-import NetflixPreloader from './components/NetflixPreloader';
-import CustomCursor from './components/CustomCursor';
-import Hero from './components/Hero';
-import About from './components/About';
-import Expertise from './components/Expertise';
+import React from 'react';
+import Intro from './components/Intro';
+import TechnicalSkills from './components/TechnicalSkills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
   return (
-    <main className="bg-[#050505] min-h-screen text-white relative cursor-none selection:bg-cyan-500 selection:text-black">
-      {/* Cinematic Preloader */}
-      {loading && <NetflixPreloader onComplete={() => setLoading(false)} />}
+    <div className="bg-[#090d16] min-h-screen text-slate-100 selection:bg-cyan-500 selection:text-slate-950 font-sans antialiased">
+      {/* 1. Intro Section (Navbar + Hero) */}
+      <Intro />
 
-      {/* Global Mouse Hover Effects & Spotlight across ALL sections */}
-      <CustomCursor />
+      {/* 2. Technical Skills Section */}
+      <TechnicalSkills />
 
-      {/* Portfolio Sections */}
-      <Hero />
-      <About />
-      <Expertise />
+      {/* 3. Projects Section */}
       <Projects />
+
+      {/* 4. Contact Section */}
       <Contact />
+
+      {/* Footer */}
       <Footer />
-    </main>
+    </div>
   );
 }
 
