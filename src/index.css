@@ -5,8 +5,8 @@
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --color-brand-dark: #09090b; /* zinc-950 */
-  --color-surface-glass: rgba(24, 24, 27, 0.85); /* zinc-900 */
+  --color-brand-dark: #fafafa; /* zinc-50 */
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-shimmer: shimmer 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -30,14 +30,14 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #09090b; /* zinc-950 */
-  color: #fafafa; /* zinc-50 */
+  background-color: #fafafa; /* zinc-50 */
+  color: #09090b; /* zinc-950 */
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
@@ -57,30 +57,30 @@ code, kbd, samp, pre, .font-mono {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #fafafa;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a; /* zinc-800 */
+  background: #d4d4d8; /* zinc-300 */
   border-radius: 9999px;
-  border: 2px solid #09090b;
+  border: 2px solid #fafafa;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46; /* zinc-700 */
+  background: #a1a1aa; /* zinc-400 */
 }
 
 /* Glassmorphism Surface Utility */
 .glass-surface {
-  background: rgba(24, 24, 27, 0.7); /* zinc-900 */
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .glass-surface-hover:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 /* Button Shimmer Effect */
@@ -88,7 +88,7 @@ code, kbd, samp, pre, .font-mono {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.5) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 200% 100%;

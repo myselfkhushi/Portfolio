@@ -50,18 +50,18 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="w-full py-24 bg-zinc-950 border-t border-zinc-800 text-zinc-100">
+    <section id="projects" className="w-full py-24 bg-zinc-50 border-t border-zinc-200 text-zinc-900">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="flex flex-col items-start mb-14">
-          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-300 bg-zinc-900 px-3.5 py-1.5 rounded-full border border-zinc-700/50 mb-3">
+          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-700 bg-white px-3.5 py-1.5 rounded-full border border-zinc-300/50 mb-3">
             Featured Work
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
             Production Projects
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
+          <p className="text-zinc-500 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
             Real-world full-stack web applications engineered with clean code architectures, responsive interfaces, and production-tested tools.
           </p>
         </div>
@@ -73,60 +73,60 @@ const Projects = () => {
             return (
               <div
                 key={project.id}
-                className="rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 transition-all duration-500 ease-out flex flex-col justify-between group shadow-xl"
+                className="rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-zinc-950/10 transition-all duration-500 ease-out flex flex-col justify-between group shadow-xl"
               >
                 <div>
                   {/* Browser Mockup Chrome Header */}
-                  <div className="px-4 py-2.5 bg-zinc-900/90 border-b border-zinc-800 flex items-center justify-between text-xs">
+                  <div className="px-4 py-2.5 bg-zinc-100/90 border-b border-zinc-200 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-300"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-300"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-300"></span>
                     </div>
                     
                     {/* Mock URL Bar */}
-                    <div className="px-3 py-0.5 rounded-md bg-zinc-950/70 border border-zinc-800 text-[10px] font-mono text-zinc-400 truncate max-w-[170px]">
+                    <div className="px-3 py-0.5 rounded-md bg-zinc-100/70 border border-zinc-200 text-[10px] font-mono text-zinc-500 truncate max-w-[170px]">
                       {project.urlSlug}
                     </div>
 
-                    <span className="flex items-center gap-1 text-[10px] font-mono text-zinc-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+                    <span className="flex items-center gap-1 text-[10px] font-mono text-zinc-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
                       Demo
                     </span>
                   </div>
 
                   {/* Project Image Preview with Smooth Zoom */}
-                  <div className="w-full h-52 sm:h-56 overflow-hidden bg-zinc-950 border-b border-zinc-800/80 relative">
+                  <div className="w-full h-52 sm:h-56 overflow-hidden bg-zinc-50 border-b border-zinc-200/80 relative">
                     <img
                       src={project.image}
                       alt={project.title}
                       className={`w-full h-full ${project.imageStyle} group-hover:scale-105 transition-transform duration-700 ease-out`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/80 via-transparent to-transparent pointer-events-none"></div>
                   </div>
 
                   {/* Card Content Body */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white tracking-tight transition-colors">
+                    <h3 className="text-xl font-bold text-zinc-950 tracking-tight transition-colors">
                       {project.title}
                     </h3>
                     
-                    <p className="text-sm text-zinc-400 leading-relaxed mt-2.5">
+                    <p className="text-sm text-zinc-500 leading-relaxed mt-2.5">
                       {isExpanded ? project.fullDesc : project.shortDesc}
                     </p>
 
                     <button
                       onClick={() => toggleExpand(project.id)}
-                      className="mt-1 text-xs font-semibold text-zinc-300 hover:text-white underline underline-offset-4 cursor-pointer transition-colors"
+                      className="mt-1 text-xs font-semibold text-zinc-700 hover:text-zinc-950 underline underline-offset-4 cursor-pointer transition-colors"
                     >
                       {isExpanded ? "Show less" : "Read more"}
                     </button>
 
                     {/* Highlights row */}
-                    <div className="mt-4 pt-3 border-t border-zinc-800/60 flex items-center gap-2 text-[11px] text-zinc-400 font-mono">
+                    <div className="mt-4 pt-3 border-t border-zinc-200/60 flex items-center gap-2 text-[11px] text-zinc-500 font-mono">
                       {project.highlights.map((h, i) => (
                         <span key={i} className="inline-flex items-center gap-1">
-                          {i > 0 && <span className="text-zinc-600">&bull;</span>}
+                          {i > 0 && <span className="text-zinc-500">&bull;</span>}
                           {h}
                         </span>
                       ))}
@@ -137,7 +137,7 @@ const Projects = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-zinc-800/50 text-zinc-300 border border-zinc-700/50"
+                          className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-zinc-100/50 text-zinc-700 border border-zinc-300/50"
                         >
                           {tag}
                         </span>
@@ -148,12 +148,12 @@ const Projects = () => {
 
                 {/* Card Footer: Full-Width Clean Live Demo Button (No GitHub Repo) */}
                 <div className="p-6 pt-0">
-                  <hr className="border-zinc-800/80 mb-4" />
+                  <hr className="border-zinc-200/80 mb-4" />
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-3 px-4 rounded-xl bg-white text-zinc-950 font-bold text-sm hover:bg-zinc-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg cursor-pointer group/btn"
+                    className="w-full py-3 px-4 rounded-xl bg-zinc-950 text-white font-bold text-sm hover:bg-zinc-800 transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg cursor-pointer group/btn"
                   >
                     <span>Live Demo</span>
                     <svg className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,3 +173,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+

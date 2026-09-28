@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-zinc-950 min-h-screen text-zinc-100 selection:bg-zinc-200 selection:text-zinc-950 font-sans antialiased relative">
+    <div className="bg-zinc-50 min-h-screen text-zinc-900 selection:bg-zinc-800 selection:text-zinc-50 font-sans antialiased relative">
       {/* Floating Capsule Header */}
       <Navbar />
 
@@ -31,3 +31,4 @@ function App() {
 }
 
 export default App;
+

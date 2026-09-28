@@ -214,18 +214,18 @@ const TechnicalSkills = () => {
     : skillCategories.filter(cat => cat.id === activeTab);
 
   return (
-    <section id="skills" className="w-full py-20 bg-zinc-950 border-t border-zinc-800 text-zinc-100">
+    <section id="skills" className="w-full py-20 bg-zinc-50 border-t border-zinc-200 text-zinc-900">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="flex flex-col items-start mb-10">
-          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-300 bg-zinc-900 px-3 py-1 rounded-full border border-zinc-700/50 mb-3">
+          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-700 bg-white px-3 py-1 rounded-full border border-zinc-300/50 mb-3">
             Technical Stack
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
             Technical Skills
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl">
+          <p className="text-zinc-600 text-sm sm:text-base mt-2 max-w-xl">
             A comprehensive collection of programming languages, libraries, databases, and developer tools I work with daily.
           </p>
 
@@ -235,8 +235,8 @@ const TechnicalSkills = () => {
               onClick={() => setActiveTab('all')}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'all'
-                  ? 'bg-zinc-200 text-zinc-950 font-semibold shadow-md'
-                  : 'bg-zinc-800/80 text-zinc-400 hover:text-white hover:bg-zinc-800'
+                  ? 'bg-zinc-950 text-white font-semibold shadow-md'
+                  : 'bg-zinc-100/80 text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200'
               }`}
             >
               All Skills
@@ -247,8 +247,8 @@ const TechnicalSkills = () => {
                 onClick={() => setActiveTab(category.id)}
                 className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                   activeTab === category.id
-                    ? 'bg-zinc-200 text-zinc-950 font-semibold shadow-md'
-                    : 'bg-zinc-800/80 text-zinc-400 hover:text-white hover:bg-zinc-800'
+                    ? 'bg-zinc-950 text-white font-semibold shadow-md'
+                    : 'bg-zinc-100/80 text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200'
                 }`}
               >
                 {category.title.split(' ')[0]}
@@ -262,22 +262,22 @@ const TechnicalSkills = () => {
           {filteredCategories.map((category) => (
             <div
               key={category.id}
-              className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/40 transition-all duration-500 ease-out flex flex-col justify-between group shadow-lg"
+              className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-zinc-950/10 transition-all duration-500 ease-out flex flex-col justify-between group shadow-lg"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-zinc-600 group-hover:scale-125 transition-transform group-hover:bg-zinc-300"></span>
-                    <h3 className="text-base font-bold text-white tracking-tight transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-zinc-400 group-hover:scale-125 transition-transform group-hover:bg-zinc-600"></span>
+                    <h3 className="text-base font-bold text-zinc-950 tracking-tight transition-colors">
                       {category.title}
                     </h3>
                   </div>
-                  <span className="text-[10px] font-mono text-zinc-400 bg-zinc-800/50 px-2 py-0.5 rounded-full border border-zinc-700/50">
+                  <span className="text-[10px] font-mono text-zinc-600 bg-zinc-100/50 px-2 py-0.5 rounded-full border border-zinc-300/50">
                     {category.skills.length} tools
                   </span>
                 </div>
                 
-                <p className="text-xs text-zinc-400 mb-5 leading-relaxed">
+                <p className="text-xs text-zinc-600 mb-5 leading-relaxed">
                   {category.description}
                 </p>
 
@@ -286,10 +286,10 @@ const TechnicalSkills = () => {
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-950/50 border border-zinc-800/80 hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-300 group/chip hover:scale-105 active:scale-95 cursor-default shadow-sm"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-50/50 border border-zinc-200/80 hover:border-zinc-300 hover:bg-zinc-200 transition-all duration-300 group/chip hover:scale-105 active:scale-95 cursor-default shadow-sm"
                     >
                       <TechIcon name={skill.iconKey} className="w-3.5 h-3.5 shrink-0 group-hover/chip:rotate-6 transition-transform" />
-                      <span className="text-xs font-medium text-zinc-300">
+                      <span className="text-xs font-medium text-zinc-700">
                         {skill.name}
                       </span>
                     </div>
@@ -298,9 +298,9 @@ const TechnicalSkills = () => {
               </div>
 
               {/* Bottom Module Metric */}
-              <div className="mt-6 pt-4 border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+              <div className="mt-6 pt-4 border-t border-zinc-200/80 flex items-center justify-between text-[11px] font-mono text-zinc-400">
                 <span>Production Stack</span>
-                <span className="text-zinc-400 font-medium flex items-center gap-1.5">
+                <span className="text-zinc-600 font-medium flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-pulse"></span>
                   Active
                 </span>
@@ -315,3 +315,4 @@ const TechnicalSkills = () => {
 };
 
 export default TechnicalSkills;
+
