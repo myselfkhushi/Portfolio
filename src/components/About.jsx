@@ -62,24 +62,24 @@ const About = () => {
       ref={sectionRef}
       className="relative w-full min-h-screen bg-[#050505] text-white py-32 px-6 md:px-12 flex flex-col justify-center select-none overflow-hidden"
     >
-      {/* Background Cinematic Red Ambient Glows */}
-      <div className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[160px] pointer-events-none"></div>
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[160px] pointer-events-none"></div>
+      {/* Background Cinematic Cyan/Ocean Ambient Glows */}
+      <div className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-black/80 backdrop-blur-2xl border border-red-600/40 text-xs font-mono uppercase tracking-widest text-white shadow-2xl">
-            <span className="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
-            <span className="text-red-500 font-bold">EPISODE 01</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-black/80 backdrop-blur-2xl border border-cyan-500/40 text-xs font-mono uppercase tracking-widest text-white shadow-2xl">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span className="text-cyan-400 font-bold">ABOUT</span>
             <span className="text-white/40">|</span>
-            <span>ABOUT THE ENGINEER</span>
+            <span>FULL STACK ENGINEER</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white">
-            EPISODE SYNOPSIS <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-600 to-red-700 drop-shadow-[0_0_30px_rgba(229,9,20,0.4)]">
-              ORIGIN & VISION.
+            ENGINEER SYNOPSIS <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 drop-shadow-[0_0_30px_rgba(14,165,233,0.4)]">
+              BUILDING BUSINESS SYSTEMS.
             </span>
           </h2>
         </div>
@@ -87,16 +87,16 @@ const About = () => {
         {/* Bento Grid Layout with Interactive Mouse Light Tracking */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           
-          {/* Card 1: Bio & Academic Core (Span 7) */}
+          {/* Card 1: Bio & Summary (Span 7) */}
           <div
             ref={addToRefs}
-            className="md:col-span-7 p-8 md:p-12 bg-[#141414]/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col justify-between relative group hover:border-red-600/60 transition-all duration-500 overflow-hidden"
+            className="md:col-span-7 p-8 md:p-12 bg-[#141414]/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col justify-between relative group hover:border-cyan-500/60 transition-all duration-500 overflow-hidden"
           >
             {/* Real-time mouse hover spotlight highlight */}
             <div 
               className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
-                background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(229,9,20,0.15), transparent 70%)'
+                background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(14,165,233,0.15), transparent 70%)'
               }}
             ></div>
 
@@ -105,32 +105,33 @@ const About = () => {
             </div>
             
             <div className="space-y-5 relative z-10">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold">Cast & Background</h3>
+              <h3 className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold">Background & Mission</h3>
               <p className="text-lg md:text-xl font-medium text-white/90 leading-relaxed">
-                I am <span className="text-white font-bold drop-shadow">Dasari Venkata Ratna Sri Sushmita</span>, a B.Tech student in Artificial Intelligence and Machine Learning at Aditya Engineering College.
+                I am <span className="text-white font-bold drop-shadow">Khushi</span>, a dedicated <span className="text-cyan-400 font-semibold">Full Stack MERN Developer</span> crafting scalable software and resilient digital products.
               </p>
-              <p className="text-sm md:text-base text-white/60 font-light leading-relaxed">
-                My technical narrative bridges rigorous algorithmic problem-solving with full-stack software architecture, translating complex backend logic into seamless, high-performance interfaces.
+              <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
+                With 3+ years of experience in full-stack MERN development, <span className="text-white font-medium">I don't just write code—I build business systems.</span> Whether you need a fast startup MVP, a custom CRM, or an enterprise SaaS platform, I turn complex ideas into secure, production-ready applications.
               </p>
             </div>
             
             <div className="pt-8 flex flex-wrap gap-2 relative z-10">
-              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-white/80">AI & ML</span>
-              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-white/80">Full-Stack Development</span>
-              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-white/80">System Architecture</span>
+              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-cyan-300">Full Stack MERN</span>
+              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-cyan-300">Startup MVPs</span>
+              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-cyan-300">Enterprise SaaS</span>
+              <span className="px-3.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-cyan-300">Custom CRMs</span>
             </div>
           </div>
 
-          {/* Card 2: Fellowships & Achievements (Span 5) */}
+          {/* Card 2: Key Capabilities & Highlights (Span 5) */}
           <div
             ref={addToRefs}
-            className="md:col-span-5 p-8 md:p-12 bg-[#141414]/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col justify-between relative group hover:border-red-600/60 transition-all duration-500 overflow-hidden"
+            className="md:col-span-5 p-8 md:p-12 bg-[#141414]/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col justify-between relative group hover:border-cyan-500/60 transition-all duration-500 overflow-hidden"
           >
             {/* Real-time mouse hover spotlight highlight */}
             <div 
               className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
-                background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(229,9,20,0.15), transparent 70%)'
+                background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(14,165,233,0.15), transparent 70%)'
               }}
             ></div>
 
@@ -139,51 +140,51 @@ const About = () => {
             </div>
             
             <div className="space-y-5 relative z-10">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold">Milestones & Accolades</h3>
+              <h3 className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold">What I Deliver</h3>
               <ul className="space-y-3.5 text-sm text-white/80 font-light">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-red-500 font-bold">&#8250;</span>
-                  <span>National Semi-Finalist in <strong className="text-white">Flipkart GRiD 7.0</strong> competition.</span>
+                  <span className="text-cyan-400 font-bold">&#8250;</span>
+                  <span><strong className="text-white">Rapid MVP Development:</strong> Taking concepts to market in record time with robust architecture.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-red-500 font-bold">&#8250;</span>
-                  <span>Member of the elite <strong className="text-white">AlgoUniversity Tech Fellowship</strong> for advanced data structures.</span>
+                  <span className="text-cyan-400 font-bold">&#8250;</span>
+                  <span><strong className="text-white">Custom Business CRMs:</strong> Automating workflows and managing data with tailored interfaces.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-red-500 font-bold">&#8250;</span>
-                  <span>Certified <strong className="text-white">GitHub Foundations</strong> & <strong className="text-white">AWS Certified AI Practitioner</strong>.</span>
+                  <span className="text-cyan-400 font-bold">&#8250;</span>
+                  <span><strong className="text-white">Scalable SaaS Platforms:</strong> Multi-tenant systems with enterprise security, Docker, and AWS.</span>
                 </li>
               </ul>
             </div>
             
             <div className="pt-6 font-mono text-xs text-white/40 relative z-10">
-              // SEASON_01 HIGHLIGHTS
+              // PRODUCTION_GRADE_EXECUTION
             </div>
           </div>
 
           {/* Card 3: Technical Ecosystem (Span 12) */}
           <div
             ref={addToRefs}
-            className="md:col-span-12 p-8 md:p-12 bg-[#141414]/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-red-600/60 transition-all duration-500 overflow-hidden relative group"
+            className="md:col-span-12 p-8 md:p-12 bg-[#141414]/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-cyan-500/60 transition-all duration-500 overflow-hidden relative group"
           >
             {/* Real-time mouse hover spotlight highlight */}
             <div 
               className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
-                background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(229,9,20,0.15), transparent 70%)'
+                background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(14,165,233,0.15), transparent 70%)'
               }}
             ></div>
 
             <div className="space-y-2 text-left relative z-10">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold">Production Tech Stack</h3>
-              <p className="text-base md:text-lg font-semibold text-white">Equipped with industry-grade instruments for robust scaling.</p>
+              <h3 className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold">Production Tech Stack</h3>
+              <p className="text-base md:text-lg font-semibold text-white">Full-stack suite for high-performance and resilient cloud deployment.</p>
             </div>
             
             <div className="flex flex-wrap items-center gap-3 relative z-10">
-              {['React', 'Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Docker', 'JavaScript'].map((tech, idx) => (
+              {['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'Docker', 'AWS'].map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-2 rounded bg-white/[0.04] border border-white/10 text-xs font-mono uppercase tracking-wider text-white shadow-inner hover:bg-red-600/20 hover:border-red-600/40 hover:scale-105 transition-all"
+                  className="px-4 py-2 rounded bg-white/[0.04] border border-white/10 text-xs font-mono uppercase tracking-wider text-white shadow-inner hover:bg-cyan-500/20 hover:border-cyan-400/40 hover:text-cyan-300 hover:scale-105 transition-all"
                 >
                   {tech}
                 </span>

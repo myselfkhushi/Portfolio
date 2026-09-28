@@ -6,40 +6,40 @@ gsap.registerPlugin(ScrollTrigger);
 
 const skillCategories = [
   { 
+    title: 'Languages', 
+    desc: 'Core programming languages powering frontend interfaces, backend services, and algorithmic problem-solving.', 
+    tag: 'LANGUAGES',
+    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C / C++'] 
+  },
+  { 
     title: 'Frontend Engineering', 
-    desc: 'Crafting responsive and interactive user interfaces using React, JavaScript, HTML5, CSS3, and Tailwind CSS.', 
-    tag: 'UI / INTERACTION',
-    skills: ['React', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3'] 
+    desc: 'Crafting responsive, high-performance web and mobile UIs with modern component-driven architectures.', 
+    tag: 'FRONTEND',
+    skills: ['React.js', 'React Native', 'Next.js', 'Tailwind CSS', 'Redux', 'HTML5'] 
   },
   { 
     title: 'Backend & Databases', 
-    desc: 'Building secure REST APIs, authentication flows, server-side applications, and high-performance database architectures.', 
-    tag: 'ARCHITECTURE',
-    skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'DQL'] 
+    desc: 'Designing scalable REST APIs, microservices, and database models across relational and document stores.', 
+    tag: 'BACKEND',
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'PostgreSQL', 'MySQL'] 
   },
   { 
-    title: 'AI & Machine Learning', 
-    desc: 'Developing intelligent applications leveraging NLP, generative AI workflows, computer vision, and LLM systems.', 
-    tag: 'INTELLIGENCE',
-    skills: ['NLP', 'Generative AI', 'Computer Vision', 'LLMs', 'AWS AI'] 
+    title: 'Tools & Cloud', 
+    desc: 'Containerizing, deploying, automating, and maintaining resilient production cloud environments.', 
+    tag: 'TOOLS & CLOUD',
+    skills: ['AWS', 'Docker', 'Linux', 'Git / GitHub', 'Postman'] 
   },
   { 
-    title: 'Cloud & DevOps', 
-    desc: 'Deploying and scaling production-grade applications using Docker containers, GitHub Actions, and CI/CD pipelines.', 
-    tag: 'INFRASTRUCTURE',
-    skills: ['Docker', 'GitHub', 'CI/CD Pipelines', 'Render', 'Docker Hub'] 
+    title: 'MERN Stack Systems', 
+    desc: 'Specialized in building full-scale business applications, fast startup MVPs, custom CRMs, and SaaS solutions.', 
+    tag: 'SYSTEMS',
+    skills: ['MERN Architecture', 'Startup MVPs', 'Custom CRMs', 'Enterprise SaaS', 'State Architecture'] 
   },
   { 
-    title: 'Algorithmic Problem Solving', 
-    desc: 'Optimizing data structures and solving complex algorithmic challenges across competitive programming platforms.', 
-    tag: 'COMPETITIVE',
-    skills: ['Data Structures', 'Algorithms', 'LeetCode', 'CodeChef', 'GFG'] 
-  },
-  { 
-    title: 'Tools & Ecosystem', 
-    desc: 'Equipped with industry-grade instruments for version control, productivity extensions, and workflow management.', 
-    tag: 'PRODUCTIVITY',
-    skills: ['Git', 'Chrome APIs', 'Adobe Express', 'Google Cloud', 'VS Code'] 
+    title: 'Security & Optimization', 
+    desc: 'Ensuring 99.9% uptime, strict authentication with JWT/OAuth, rate limiting, and database indexing.', 
+    tag: 'PRODUCTION',
+    skills: ['JWT / Auth', 'Database Isolation', 'API Rate Limiting', 'CI/CD Pipelines', 'Performance Tuning'] 
   },
 ];
 
@@ -172,18 +172,18 @@ const Skills = () => {
     <section 
       id="skills"
       ref={sectionRef} 
-      className="relative w-full h-screen bg-[#0b0b0b] text-white overflow-hidden flex items-center justify-center md:[perspective:1000px] select-none"
+      className="relative w-full h-screen bg-[#080808] text-white overflow-hidden flex items-center justify-center md:[perspective:1000px] select-none"
     >
-      {/* Dynamic Netflix Dark Background Vignettes */}
+      {/* Dynamic Cyan / Ocean Dark Background Vignettes */}
       {skillCategories.map((_, i) => (
         <div 
           key={i}
           ref={el => bgRefs.current[i] = el}
-          className="absolute inset-0 z-0 pointer-events-none opacity-0 bg-gradient-to-tr from-black via-[#140203] to-black"
+          className="absolute inset-0 z-0 pointer-events-none opacity-0 bg-gradient-to-tr from-[#020b14] via-[#051322] to-black"
         />
       ))}
 
-      {/* Massive Background Typography (Netflix Red & White Outline) */}
+      {/* Massive Background Typography (Cyan / Sky Outline) */}
       <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
         {skillCategories.map((_, i) => (
           <h1 
@@ -191,7 +191,7 @@ const Skills = () => {
             ref={el => textRefs.current[i] = el}
             className="absolute text-[22vw] md:text-[18vw] font-black uppercase text-transparent leading-none tracking-tighter mix-blend-overlay"
             style={{ 
-               WebkitTextStroke: `2px ${i % 2 === 0 ? 'rgba(229,9,20,0.3)' : 'rgba(255,255,255,0.15)'}`,
+               WebkitTextStroke: `2px ${i % 2 === 0 ? 'rgba(14,165,233,0.35)' : 'rgba(255,255,255,0.12)'}`,
                opacity: 0 
             }}
           >
@@ -209,14 +209,14 @@ const Skills = () => {
           <div 
             key={i}
             ref={el => cardsRef.current[i] = el}
-            className="md:absolute relative shrink-0 snap-center w-[82vw] sm:w-[360px] md:w-[440px] h-[460px] md:h-[540px] rounded-[32px] p-8 md:p-10 bg-[#141414]/95 backdrop-blur-2xl border border-white/15 flex flex-col justify-between overflow-hidden group shadow-[0_30px_60px_rgba(0,0,0,0.9)] hover:border-red-600/80 transition-colors duration-500"
+            className="md:absolute relative shrink-0 snap-center w-[82vw] sm:w-[360px] md:w-[440px] h-[460px] md:h-[540px] rounded-[32px] p-8 md:p-10 bg-[#12161f]/95 backdrop-blur-2xl border border-cyan-500/20 flex flex-col justify-between overflow-hidden group shadow-[0_30px_60px_rgba(0,0,0,0.9)] hover:border-cyan-400/80 transition-colors duration-500"
           >
-            {/* Inner Red Glossy Reflection */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-20" />
+            {/* Inner Cyan/Ocean Glossy Reflection */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-20" />
             
             {/* Top Card Metadata */}
             <div className="flex items-center justify-between relative z-10">
-              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-red-500 bg-red-600/10 px-3 py-1 rounded border border-red-600/20">
+              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded border border-cyan-500/30">
                 {category.tag}
               </span>
               <span className="text-xs font-mono text-white/40">
@@ -226,7 +226,7 @@ const Skills = () => {
 
             {/* Middle Title & Description */}
             <div className="space-y-4 relative z-10 my-auto">
-              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight group-hover:text-red-500 transition-colors duration-300">
+              <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight group-hover:text-cyan-400 transition-colors duration-300">
                 {category.title}
               </h3>
               <p className="text-sm md:text-base text-white/70 font-light leading-relaxed">
@@ -239,7 +239,7 @@ const Skills = () => {
               {category.skills.map((skill, sIdx) => (
                 <span 
                   key={sIdx}
-                  className="text-xs font-mono text-white/80 bg-white/5 border border-white/10 px-3 py-1 rounded group-hover:border-red-600/30 transition-colors"
+                  className="text-xs font-mono text-white/80 bg-white/5 border border-white/10 px-3 py-1 rounded group-hover:border-cyan-400/30 group-hover:text-cyan-300 transition-colors"
                 >
                   {skill}
                 </span>
@@ -247,7 +247,7 @@ const Skills = () => {
             </div>
 
             {/* Bottom Glow Accent */}
-            <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-red-600 group-hover:shadow-[0_0_15px_#E50914] transition-all" />
+            <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-cyan-400 group-hover:shadow-[0_0_15px_#38bdf8] transition-all" />
           </div>
         ))}
       </div>
