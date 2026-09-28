@@ -1,102 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import profileImg from '../assets/Portfolio/khushi.jpg';
 
 const Intro = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: 'About', href: '#intro' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
   return (
-    <section id="intro" className="relative w-full min-h-screen bg-[#090d16] text-slate-100 flex flex-col justify-between">
-      {/* 1. Clean Sticky Top Navigation */}
-      <header className="sticky top-0 z-50 w-full bg-[#090d16]/85 backdrop-blur-md border-b border-slate-800/80">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo / Name */}
-          <a href="#intro" className="text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition-colors">
-            Khushi<span className="text-cyan-400">.</span>
-          </a>
+    <section id="intro" className="relative w-full min-h-screen bg-[#080c14] text-slate-100 flex flex-col justify-center pt-24 pb-16 overflow-hidden">
+      {/* Ambient background soft light */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[350px] bg-cyan-500/8 rounded-full blur-[130px] pointer-events-none"></div>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-cyan-400 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop Contact CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="#contact"
-              className="px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500 hover:text-slate-950 transition-all duration-200"
-            >
-              Get In Touch
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-300 hover:text-white"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Dropdown */}
-        {mobileMenuOpen && (
-          <div className="md:hidden px-6 py-4 bg-[#0c121f] border-b border-slate-800 space-y-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-sm font-medium text-slate-300 hover:text-cyan-400 py-1"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-center mt-3 px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-500 text-slate-950"
-            >
-              Get In Touch
-            </a>
-          </div>
-        )}
-      </header>
-
-      {/* 2. Intro / Hero Main Content */}
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 my-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      {/* Main Container */}
+      <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
         
-        {/* Left Column: Text & CTAs */}
+        {/* Left Column: Bio & CTAs */}
         <div className="md:col-span-7 flex flex-col items-start space-y-6">
           
           {/* Availability Status Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-300">
-            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/70 text-xs font-medium text-slate-300 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>Available for full-time roles & projects</span>
           </div>
 
-          {/* Heading */}
+          {/* Headline */}
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
               Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Khushi</span>
@@ -107,25 +30,25 @@ const Intro = () => {
           </div>
 
           {/* Authentic, human bio */}
-          <p className="text-base text-slate-400 leading-relaxed max-w-xl">
-            I build clean, responsive, and reliable web applications. With a strong foundation in MongoDB, Express.js, React.js, and Node.js, I enjoy turning practical ideas into well-crafted, user-friendly digital experiences.
+          <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-xl">
+            I build responsive, high-performance web applications with clean code and modern architectures. Focused on turning complex business requirements into intuitive, reliable products using React.js, Node.js, Express, and MongoDB.
           </p>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-cyan-500 text-slate-950 font-semibold text-sm hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm hover:bg-cyan-400 transition-all active:scale-95 shadow-lg shadow-cyan-500/20"
             >
               <span>View Projects</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M19 9l-7 7-7-7" />
               </svg>
             </a>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-slate-800/90 text-slate-200 font-semibold text-sm border border-slate-700 hover:bg-slate-700 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/90 text-slate-200 font-semibold text-sm border border-slate-700/80 hover:bg-slate-800 hover:text-white transition-all active:scale-95 shadow-sm"
             >
               <span>Get In Touch</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,9 +57,9 @@ const Intro = () => {
             </a>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4 pt-4 border-t border-slate-800/80 w-full max-w-md">
-            <span className="text-xs font-medium uppercase tracking-wider text-slate-500">Connect:</span>
+          {/* Social Links Bar */}
+          <div className="flex items-center gap-5 pt-4 border-t border-slate-800/80 w-full max-w-md">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Connect:</span>
             
             <a
               href="https://github.com/myselfkhushi"
@@ -175,27 +98,50 @@ const Intro = () => {
 
         </div>
 
-        {/* Right Column: Clean Profile Image Card */}
+        {/* Right Column: Professional Developer Profile Card */}
         <div className="md:col-span-5 flex justify-center md:justify-end">
-          <div className="relative group">
-            {/* Subtle backlight */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-2xl blur-lg group-hover:opacity-100 opacity-60 transition duration-500"></div>
+          <div className="w-full max-w-xs sm:max-w-sm rounded-2xl bg-[#0c121e] border border-slate-700/80 shadow-2xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 group">
             
-            {/* Image Container */}
-            <div className="relative w-64 h-80 sm:w-72 sm:h-92 rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900 shadow-2xl">
+            {/* Window Chrome Header Bar */}
+            <div className="px-4 py-2.5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">khushi.dev</span>
+              <span className="text-[10px] text-cyan-400 font-mono">MERN</span>
+            </div>
+
+            {/* Profile Image */}
+            <div className="relative h-72 sm:h-80 overflow-hidden bg-slate-950">
               <img
                 src={profileImg}
                 alt="Khushi - Full Stack MERN Developer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#090d16]/90 via-transparent to-transparent"></div>
-              
-              {/* Card Footer Badge */}
-              <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-800 text-xs">
-                <p className="font-semibold text-white">Khushi</p>
-                <p className="text-slate-400 text-[11px]">Full Stack MERN Developer</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c121e] via-transparent to-transparent opacity-80"></div>
+            </div>
+
+            {/* Card Info Footer */}
+            <div className="p-4 bg-[#0c121e] border-t border-slate-800/80">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-bold text-white text-base">Khushi</h3>
+                  <p className="text-xs text-cyan-400 font-medium">Full Stack MERN Developer</p>
+                </div>
+                <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono text-emerald-400">
+                  Active
+                </span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-1.5 text-[11px] text-slate-400">
+                <span className="px-2 py-0.5 rounded bg-slate-800/70 border border-slate-700/50">React</span>
+                <span className="px-2 py-0.5 rounded bg-slate-800/70 border border-slate-700/50">Node.js</span>
+                <span className="px-2 py-0.5 rounded bg-slate-800/70 border border-slate-700/50">MongoDB</span>
+                <span className="px-2 py-0.5 rounded bg-slate-800/70 border border-slate-700/50">Tailwind</span>
               </div>
             </div>
+
           </div>
         </div>
 

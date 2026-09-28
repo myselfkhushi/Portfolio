@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './components/Navbar';
 import Intro from './components/Intro';
 import TechnicalSkills from './components/TechnicalSkills';
 import Projects from './components/Projects';
@@ -7,8 +8,11 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-[#090d16] min-h-screen text-slate-100 selection:bg-cyan-500 selection:text-slate-950 font-sans antialiased">
-      {/* 1. Intro Section (Navbar + Hero) */}
+    <div className="bg-[#080c14] min-h-screen text-slate-100 selection:bg-cyan-500 selection:text-slate-950 font-sans antialiased relative">
+      {/* Floating Capsule Header */}
+      <Navbar />
+
+      {/* 1. Intro Section */}
       <Intro />
 
       {/* 2. Technical Skills Section */}

@@ -257,40 +257,53 @@ const TechnicalSkills = () => {
           </div>
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories Grid with Smooth Hover Lift & Shadow */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredCategories.map((category) => (
             <div
               key={category.id}
-              className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-[#0c121e] border border-slate-800 hover:border-cyan-500/40 hover:-translate-y-1.5 hover:shadow-[0_18px_35px_-10px_rgba(14,165,233,0.14)] transition-all duration-300 ease-out flex flex-col justify-between group shadow-lg"
             >
               <div>
-                <div className="flex items-center justify-between mb-1.5">
-                  <h3 className="text-base font-bold text-white tracking-tight">
-                    {category.title}
-                  </h3>
-                  <span className="text-[11px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/30">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform"></span>
+                    <h3 className="text-base font-bold text-white tracking-tight group-hover:text-cyan-400 transition-colors">
+                      {category.title}
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded-full border border-cyan-800/40">
                     {category.skills.length} tools
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 mb-5">
+                
+                <p className="text-xs text-slate-400 mb-5 leading-relaxed">
                   {category.description}
                 </p>
 
-                {/* Skill Chips with Genuine Vector SVG Icons */}
+                {/* Skill Chips with Genuine Vector SVG Icons and Smooth Micro-Interactions */}
                 <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/70 border border-slate-700/60 hover:border-cyan-500/40 hover:bg-slate-800 transition-all group"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/60 hover:border-cyan-500/50 hover:bg-slate-800/80 transition-all duration-200 group/chip hover:scale-105 active:scale-95 cursor-default shadow-sm"
                     >
-                      <TechIcon name={skill.iconKey} className="w-3.5 h-3.5 shrink-0 group-hover:scale-110 transition-transform" />
+                      <TechIcon name={skill.iconKey} className="w-3.5 h-3.5 shrink-0 group-hover/chip:rotate-6 transition-transform" />
                       <span className="text-xs font-medium text-slate-200">
                         {skill.name}
                       </span>
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Bottom Module Metric */}
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>Production Stack</span>
+                <span className="text-emerald-400 font-medium flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Active
+                </span>
               </div>
             </div>
           ))}

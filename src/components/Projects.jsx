@@ -7,8 +7,10 @@ const projects = [
   {
     id: 1,
     title: "Kumar Music E-Commerce",
+    urlSlug: "kumarvisuals.com/store",
     shortDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering...",
     fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, and an administrative order management dashboard.",
+    highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
     image: kumarImg,
     imageStyle: "object-cover object-top",
@@ -17,8 +19,10 @@ const projects = [
   {
     id: 2,
     title: "CineStream Cinema",
+    urlSlug: "cinestream.app/browse",
     shortDesc: "A responsive movie browsing and entertainment platform featuring high-definition trailer previews, genre filtering, trending releases, and watchlists...",
     fullDesc: "A responsive movie browsing and entertainment platform featuring high-definition trailer previews, genre filtering, trending releases, dynamic search, and custom watchlists powered by React and TMDB API.",
+    highlights: ["TMDB API", "HD Video Modals", "Genre Filters"],
     tags: ["React.js", "Tailwind CSS", "TMDB API", "Axios"],
     image: cinestreamImg,
     imageStyle: "object-cover object-center",
@@ -27,8 +31,10 @@ const projects = [
   {
     id: 3,
     title: "DevFlow Project Workspace",
+    urlSlug: "devflow.workspace/kanban",
     shortDesc: "A streamlined project and sprint tracking dashboard with interactive Kanban task columns, priority tags, deadline tracking, and team collaboration...",
     fullDesc: "A streamlined project and sprint tracking dashboard with interactive Kanban task columns, priority tags, deadline tracking, team collaboration, and persistent RESTful backend state using Node.js and MongoDB.",
+    highlights: ["Kanban Board", "State Persistence", "REST Endpoints"],
     tags: ["React.js", "Express.js", "Node.js", "MongoDB"],
     image: devdeskImg,
     imageStyle: "object-cover object-center",
@@ -44,44 +50,64 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="w-full py-20 bg-[#090d16] border-t border-slate-800 text-slate-100">
+    <section id="projects" className="w-full py-24 bg-[#090d16] border-t border-slate-800 text-slate-100">
       <div className="max-w-6xl mx-auto px-6">
         
-        {/* Header */}
-        <div className="flex flex-col items-start mb-12">
-          <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
-            Portfolio
+        {/* Section Header */}
+        <div className="flex flex-col items-start mb-14">
+          <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3.5 py-1.5 rounded-full border border-cyan-800/40 mb-3">
+            Featured Work
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Featured Projects
+            Production Projects
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
-            Clean, production-focused applications demonstrating responsive frontend design and scalable full-stack architectures.
+          <p className="text-slate-400 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
+            Real-world full-stack web applications engineered with clean code architectures, responsive interfaces, and production-tested tools.
           </p>
         </div>
 
-        {/* Project Cards Grid - Simple & Matching Image 4 */}
+        {/* Project Cards Grid with Professional Browser Frame and Smooth Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => {
             const isExpanded = expandedId === project.id;
             return (
               <div
                 key={project.id}
-                className="rounded-2xl bg-[#0c1017] border border-slate-800/90 overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between shadow-2xl"
+                className="rounded-2xl bg-[#0c121e] border border-slate-800 hover:border-cyan-500/40 overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(14,165,233,0.18)] transition-all duration-300 ease-out flex flex-col justify-between group shadow-xl"
               >
                 <div>
-                  {/* Real Project Image */}
-                  <div className="w-full h-52 sm:h-56 overflow-hidden bg-slate-950 border-b border-slate-800/80">
+                  {/* Browser Mockup Chrome Header */}
+                  <div className="px-4 py-2.5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                    </div>
+                    
+                    {/* Mock URL Bar */}
+                    <div className="px-3 py-0.5 rounded-md bg-slate-950/70 border border-slate-800 text-[10px] font-mono text-slate-400 truncate max-w-[170px]">
+                      {project.urlSlug}
+                    </div>
+
+                    <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-400">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Live
+                    </span>
+                  </div>
+
+                  {/* Project Image Preview with Smooth Zoom */}
+                  <div className="w-full h-52 sm:h-56 overflow-hidden bg-slate-950 border-b border-slate-800/80 relative">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={`w-full h-full ${project.imageStyle} hover:scale-105 transition-transform duration-500`}
+                      className={`w-full h-full ${project.imageStyle} group-hover:scale-105 transition-transform duration-500 ease-out`}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c121e]/40 via-transparent to-transparent pointer-events-none"></div>
                   </div>
 
                   {/* Card Content Body */}
                   <div className="p-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-cyan-400 transition-colors">
                       {project.title}
                     </h3>
                     
@@ -91,17 +117,27 @@ const Projects = () => {
 
                     <button
                       onClick={() => toggleExpand(project.id)}
-                      className="mt-1 text-xs font-medium text-slate-400 hover:text-white underline cursor-pointer"
+                      className="mt-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 underline underline-offset-4 cursor-pointer transition-colors"
                     >
                       {isExpanded ? "Show less" : "Read more"}
                     </button>
 
+                    {/* Highlights row */}
+                    <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center gap-2 text-[11px] text-cyan-300/80 font-mono">
+                      {project.highlights.map((h, i) => (
+                        <span key={i} className="inline-flex items-center gap-1">
+                          {i > 0 && <span className="text-slate-600">&bull;</span>}
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+
                     {/* Tech Badges / Pills */}
-                    <div className="flex flex-wrap gap-2 mt-5">
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 rounded-full text-xs font-medium bg-[#161a23] text-slate-300 border border-slate-800"
+                          className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-700/60"
                         >
                           {tag}
                         </span>
@@ -110,19 +146,19 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Card Footer: Simple Full-Width Live Demo Button Only (No GitHub Repo) */}
+                {/* Card Footer: Full-Width Clean Live Demo Button (No GitHub Repo) */}
                 <div className="p-6 pt-0">
                   <hr className="border-slate-800/80 mb-4" />
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-3 px-4 rounded-xl bg-white text-slate-950 font-bold text-sm hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                    className="w-full py-3 px-4 rounded-xl bg-white text-slate-950 font-bold text-sm hover:bg-slate-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg cursor-pointer group/btn"
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span>Live Demo</span>
+                    <svg className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                    <span>Live Demo</span>
                   </a>
                 </div>
 
