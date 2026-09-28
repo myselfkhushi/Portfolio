@@ -77,22 +77,30 @@ const Projects = () => {
               >
                 <div>
                   {/* Browser Mockup Chrome Header */}
-                  <div className="px-4 py-2.5 bg-zinc-100/90 border-b border-zinc-200 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-300"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-300"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-zinc-300"></span>
+                  <div className="px-4 py-2.5 bg-gradient-to-b from-zinc-50 to-zinc-200/80 border-b border-zinc-300 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 w-1/4">
+                      <span className="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></span>
+                      <span className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></span>
+                      <span className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></span>
                     </div>
                     
-                    {/* Mock URL Bar */}
-                    <div className="px-3 py-0.5 rounded-md bg-zinc-100/70 border border-zinc-200 text-[10px] font-mono text-zinc-500 truncate max-w-[170px]">
-                      {project.urlSlug}
+                    {/* Mock URL Bar (Safari Style) */}
+                    <div className="flex-1 max-w-[200px] flex justify-center">
+                      <div className="w-full px-3 py-1 rounded-md bg-white border border-zinc-300 text-[10px] text-center font-medium text-zinc-600 truncate shadow-sm">
+                        <span className="opacity-50 mr-1 text-zinc-400">
+                          <svg className="w-2.5 h-2.5 inline-block -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                          </svg>
+                        </span>
+                        {project.urlSlug}
+                      </div>
                     </div>
 
-                    <span className="flex items-center gap-1 text-[10px] font-mono text-zinc-500">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
-                      Demo
-                    </span>
+                    <div className="w-1/4 flex justify-end">
+                      <span className="flex items-center gap-1 text-[10px] font-mono text-zinc-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
+                      </span>
+                    </div>
                   </div>
 
                   {/* Project Image Preview with Smooth Zoom */}

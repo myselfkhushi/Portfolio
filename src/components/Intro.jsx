@@ -3,7 +3,7 @@ import profileImg from '../assets/Portfolio/khushi.jpg';
 
 const Intro = () => {
   return (
-    <section id="intro" className="relative w-full min-h-screen bg-[#080c14] text-zinc-100 flex flex-col justify-center pt-24 pb-16 overflow-hidden">
+    <section id="intro" className="relative w-full min-h-screen bg-white text-zinc-900 flex flex-col justify-center pt-24 pb-16 overflow-hidden">
       {/* Ambient background soft light */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[350px] bg-zinc-800/20 rounded-full blur-[130px] pointer-events-none"></div>
 
@@ -102,15 +102,21 @@ const Intro = () => {
         <div className="md:col-span-5 flex justify-center md:justify-end">
           <div className="w-full max-w-xs sm:max-w-sm rounded-2xl bg-white border border-zinc-200/50 shadow-2xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 group">
             
-            {/* Window Chrome Header Bar */}
-            <div className="px-4 py-2.5 bg-white/90 border-b border-zinc-200 flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            {/* Window Chrome Header Bar (MacBook Style) */}
+            <div className="px-4 py-2.5 bg-gradient-to-b from-zinc-50 to-zinc-200/80 border-b border-zinc-300 flex items-center justify-between text-xs">
+              <div className="flex items-center gap-1.5 w-1/4">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]"></span>
               </div>
-              <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-wider">khushi.dev</span>
-              <span className="text-[10px] text-zinc-600 font-mono">MERN</span>
+              <div className="flex-1 flex justify-center">
+                <div className="px-6 py-0.5 rounded border border-zinc-300/60 bg-white/60 text-[10px] font-mono text-zinc-500 tracking-wide shadow-sm">
+                  khushi.dev
+                </div>
+              </div>
+              <div className="w-1/4 flex justify-end">
+                <span className="text-[10px] text-zinc-400 font-mono">MERN</span>
+              </div>
             </div>
 
             {/* Profile Image */}
@@ -151,6 +157,7 @@ const Intro = () => {
 };
 
 export default Intro;
+
 
 
 
