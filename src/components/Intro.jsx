@@ -124,7 +124,7 @@ const Intro = () => {
               <img
                 src={profileImg}
                 alt="Khushi - Full Stack MERN Developer"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{ objectPosition: 'center 18%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-transparent to-transparent opacity-80"></div>
             </div>
