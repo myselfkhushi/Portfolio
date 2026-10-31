@@ -120,13 +120,12 @@ const Intro = () => {
             </div>
 
             {/* Profile Image */}
-            <div className="relative h-72 sm:h-80 overflow-hidden bg-zinc-50">
+            <div className="relative w-full aspect-square overflow-hidden bg-zinc-100">
               <img
                 src={profileImg}
                 alt="Khushi - Full Stack MERN Developer"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{ objectPosition: 'center 18%' }}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-transparent to-transparent opacity-80"></div>
             </div>
 
             {/* Card Info Footer */}
