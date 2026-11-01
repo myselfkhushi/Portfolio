@@ -108,7 +108,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. Priya Sharma"
+                    placeholder="e.g. Khushi"
                     required
                     className="w-full px-4 py-2.5 rounded-xl bg-zinc-100/80 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 transition-all duration-200"
                   />
@@ -125,7 +125,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="e.g. priya@example.com"
+                    placeholder="e.g. khushi@example.com"
                     required
                     className="w-full px-4 py-2.5 rounded-xl bg-zinc-100/80 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 transition-all duration-200"
                   />
