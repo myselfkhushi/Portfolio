@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import bazarImg from '../assets/Portfolio/bazaio.png';
 import urbanImg from '../assets/Portfolio/urbannest.png';
 import backpackImg from '../assets/Portfolio/backpackwander.png';
-// import placeholderImg from '../assets/Portfolio/bazaio.png';
+import placeholderImg from '../assets/Portfolio/bazaio.png';
 
 const projects = [
   {
