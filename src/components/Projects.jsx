@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import bazarImg from '../assets/Portfolio/bazaio.png';
+import bazarImg from '../assets/Portfolio/bazario.png';
+import urbanImg from '../assets/Portfolio/urban.png';
+import backpackImg from '../assets/Portfolio/backpack.png';
+
 
 
 const projects = [
@@ -26,7 +29,7 @@ const projects = [
       fullDesc: "Urban Nest Interiors provides a showcase of premium interior design projects, highlighting clean aesthetics, material selections, and spatial planning for luxury homes.",
       highlights: ["Design Strategy", "3D Renderings", "Client Collaboration"],
       tags: ["React.js", "TailwindCSS", "Design", "Portfolio"],
-      image: bazarImg,
+      image: urbanImg,
       imageStyle: "object-cover object-center",
       liveUrl: "https://urbannestinteriors.co.uk/"
     }
@@ -39,7 +42,7 @@ const projects = [
       fullDesc: "Backpack Wander offers in‑depth travel guides, personal stories from the road, and detailed gear reviews to help backpackers plan trips and choose the right equipment.",
       highlights: ["Travel Guides", "Gear Reviews", "Community Stories"],
       tags: ["React.js", "TailwindCSS", "Content", "Blog"],
-      image: bazarImg,
+      image: backpackImg,
       imageStyle: "object-cover object-center",
       liveUrl: "https://www.backpackwander.com/"
     }
