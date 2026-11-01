@@ -15,12 +15,95 @@ const projects = [
     highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
     image: bazarImg,
+    imageStyle: "object-contain object-top",
+    liveUrl: "https://bazario-coral.vercel.app/"
+  },
+  {
+    id: 2,
+    title: "Feni Finance",
+    urlSlug: "feni.finance",
+    shortDesc: "A fintech platform offering digital financial services, payment processing, and loan management.",
+    fullDesc: "Feni Finance provides a comprehensive suite of digital financial solutions, including online payments, loan applications, and financial analytics for businesses and individuals.",
+    highlights: ["Payments", "Loans", "Analytics"],
+    tags: ["React.js", "TailwindCSS", "Fintech", "Payments"],
+    image: placeholderImg,
+    imageStyle: "object-contain object-center",
+    liveUrl: "https://www.feni.finance/"
+  },
+  {
+    id: 3,
+    title: "Urban Nest Interiors",
+    urlSlug: "urbannestinteriors.co.uk",
+    shortDesc: "A modern interior design portfolio showcasing high‑end residential projects.",
+    fullDesc: "Urban Nest Interiors provides a showcase of premium interior design projects, highlighting clean aesthetics, material selections, and spatial planning for luxury homes.",
+    highlights: ["Design Strategy", "3D Renderings", "Client Collaboration"],
+    tags: ["React.js", "TailwindCSS", "Design", "Portfolio"],
+    image: urbanImg,
+    imageStyle: "object-contain object-center",
+    liveUrl: "https://urbannestinteriors.co.uk/"
+  },
+  {
+    id: 4,
+    title: "Backpack Wander",
+    urlSlug: "backpackwander.com",
+    shortDesc: "A travel blog and gear review site focusing on backpacking adventures and equipment recommendations.",
+    fullDesc: "Backpack Wander offers in‑depth travel guides, personal stories from the road, and detailed gear reviews to help backpackers plan trips and choose the right equipment.",
+    highlights: ["Travel Guides", "Gear Reviews", "Community Stories"],
+    tags: ["React.js", "TailwindCSS", "Content", "Blog"],
+    image: backpackImg,
+    imageStyle: "object-contain object-center",
+    liveUrl: "https://www.backpackwander.com/"
+  },
+  {
+    id: 5,
+    title: "Pharmdlive",
+    urlSlug: "pharmdlive.com",
+    shortDesc: "A platform connecting pharmacies with patients for online prescriptions and medication delivery.",
+    fullDesc: "Pharmdlive offers a seamless experience for ordering prescriptions online, teleconsultations with pharmacists, and rapid medication delivery to homes.",
+    highlights: ["Online Prescriptions", "Telepharmacy", "Delivery"],
+    tags: ["React.js", "TailwindCSS", "Healthcare", "E-commerce"],
+    image: placeholderImg,
+    imageStyle: "object-cover object-center",
+    liveUrl: "https://pharmdlive.com/"
+  },
+  {
+    id: 6,
+    title: "Orafol Front",
+    urlSlug: "orafol-front.missio.io",
+    shortDesc: "Front‑end dashboard for Orafol, a marketing automation platform.",
+    fullDesc: "Orafol Front provides an interactive UI for managing campaigns, tracking metrics, and integrating with Missio services for automated marketing workflows.",
+    highlights: ["Campaign Management", "Analytics", "Integrations"],
+    tags: ["React.js", "TailwindCSS", "Dashboard", "Marketing"],
+    image: placeholderImg,
+    imageStyle: "object-cover object-center",
+    liveUrl: "https://orafol-front.missio.io/"
+  },
+  {
+    id: 7,
+    title: "Gulf EL",
+    urlSlug: "gulf-el.com",
+    shortDesc: "Electronics e‑commerce site serving the Gulf region with a wide range of consumer electronics.",
+    fullDesc: "Gulf EL offers a comprehensive catalogue of electronics, featuring detailed product pages, secure checkout, and regional shipping options across the Gulf countries.",
+    highlights: ["Wide Catalogue", "Secure Checkout", "Regional Shipping"],
+    tags: ["React.js", "TailwindCSS", "E-Commerce", "Retail"],
+    image: placeholderImg,
+    imageStyle: "object-cover object-center",
+    liveUrl: "https://www.gulf-el.com/"
+  },
+
+  {
+    id: 1,
+    title: "Bazaio E-Commerce",
+    urlSlug: "bazaio.com/store",
+    shortDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering...",
+    fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, and an administrative order management dashboard.",
+    highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
+    tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
+    image: bazarImg,
     imageStyle: "object-cover object-top",
     liveUrl: "https://bazario-coral.vercel.app/"
   },
  
- 
-,
     {
       id: 2,
       title: "Urban Nest Interiors",
