@@ -25,7 +25,7 @@ const projects = [
     fullDesc: "Feni Finance provides a comprehensive suite of digital financial solutions, including online payments, loan applications, and financial analytics for businesses and individuals.",
     highlights: ["Payments", "Loans", "Analytics"],
     tags: ["React.js", "TailwindCSS", "Fintech", "Payments"],
-    image:bazarImg,
+    image: bazarImg,
     imageStyle: "object-contain object-center",
     liveUrl: "https://www.feni.finance/"
   },
