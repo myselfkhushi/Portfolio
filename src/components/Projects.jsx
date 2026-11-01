@@ -18,7 +18,7 @@ const projects = [
     highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
     image: bazarImg,
-    imageStyle: "object-cover object-top",
+    imageStyle: "object-contain",
     liveUrl: "https://bazario-coral.vercel.app/"
   },
   {
@@ -30,7 +30,7 @@ const projects = [
     highlights: ["Payments", "Loans", "Analytics"],
     tags: ["React.js", "TailwindCSS", "Fintech", "Payments"],
     image: feniImg,
-    imageStyle: "object-contain object-center",
+    imageStyle: "object-contain",
     liveUrl: "https://www.feni.finance/"
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     highlights: ["Design Strategy", "3D Renderings", "Client Collaboration"],
     tags: ["React.js", "TailwindCSS", "Design", "Portfolio"],
     image: urbanImg,
-    imageStyle: "object-contain object-center",
+    imageStyle: "object-contain",
     liveUrl: "https://urbannestinteriors.co.uk/"
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     highlights: ["Travel Guides", "Gear Reviews", "Community Stories"],
     tags: ["React.js", "TailwindCSS", "Content", "Blog"],
     image: backpackImg,
-    imageStyle: "object-contain object-center",
+    imageStyle: "object-contain",
     liveUrl: "https://www.backpackwander.com/"
   },
   {
@@ -66,7 +66,7 @@ const projects = [
     highlights: ["Online Prescriptions", "Telepharmacy", "Delivery"],
     tags: ["React.js", "TailwindCSS", "Healthcare", "E-commerce"],
     image: pharmaImg,
-    imageStyle: "object-cover object-center",
+    imageStyle: "object-contain",
     liveUrl: "https://pharmdlive.com/"
   },
   {
@@ -78,7 +78,7 @@ const projects = [
     highlights: ["Campaign Management", "Analytics", "Integrations"],
     tags: ["React.js", "TailwindCSS", "Dashboard", "Marketing"],
     image: orafolImg,
-    imageStyle: "object-cover object-center",
+    imageStyle: "object-contain ",
     liveUrl: "https://orafol-front.missio.io/"
   },
   {
@@ -90,7 +90,7 @@ const projects = [
     highlights: ["Wide Catalogue", "Secure Checkout", "Regional Shipping"],
     tags: ["React.js", "TailwindCSS", "E-Commerce", "Retail"],
     image: gulfImg,
-    imageStyle: "object-cover object-center",
+    imageStyle: "object-contain",
     liveUrl: "https://www.gulf-el.com/"
   }
 ];
