@@ -6,7 +6,7 @@ import devdeskImg from '../assets/Portfolio/devdesk.jpg';
 const projects = [
   {
     id: 1,
-    title: "Kumar Music E-Commerce",
+    title: "Bazaio",
     urlSlug: "kumarvisuals.com/store",
     shortDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering...",
     fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, and an administrative order management dashboard.",
@@ -14,7 +14,7 @@ const projects = [
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
     image: kumarImg,
     imageStyle: "object-cover object-top",
-    liveUrl: "https://github.com/myselfkhushi"
+    liveUrl: "https://portfolio-khushi-7072.vercel.app/"
   },
  
  
