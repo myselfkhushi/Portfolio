@@ -16,30 +16,8 @@ const projects = [
     imageStyle: "object-cover object-top",
     liveUrl: "https://github.com/myselfkhushi"
   },
-  {
-    id: 2,
-    title: "CineStream Cinema",
-    urlSlug: "cinestream.app/browse",
-    shortDesc: "A responsive movie browsing and entertainment platform featuring high-definition trailer previews, genre filtering, trending releases, and watchlists...",
-    fullDesc: "A responsive movie browsing and entertainment platform featuring high-definition trailer previews, genre filtering, trending releases, dynamic search, and custom watchlists powered by React and TMDB API.",
-    highlights: ["TMDB API", "HD Video Modals", "Genre Filters"],
-    tags: ["React.js", "Tailwind CSS", "TMDB API", "Axios"],
-    image: cinestreamImg,
-    imageStyle: "object-cover object-center",
-    liveUrl: "https://github.com/myselfkhushi"
-  },
-  {
-    id: 3,
-    title: "DevFlow Project Workspace",
-    urlSlug: "devflow.workspace/kanban",
-    shortDesc: "A streamlined project and sprint tracking dashboard with interactive Kanban task columns, priority tags, deadline tracking, and team collaboration...",
-    fullDesc: "A streamlined project and sprint tracking dashboard with interactive Kanban task columns, priority tags, deadline tracking, team collaboration, and persistent RESTful backend state using Node.js and MongoDB.",
-    highlights: ["Kanban Board", "State Persistence", "REST Endpoints"],
-    tags: ["React.js", "Express.js", "Node.js", "MongoDB"],
-    image: devdeskImg,
-    imageStyle: "object-cover object-center",
-    liveUrl: "https://github.com/myselfkhushi"
-  }
+ 
+ 
 ];
 
 const Projects = () => {
