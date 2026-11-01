@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import bazarImg from '../assets/Portfolio/bazaio.png';
-import urbanImg from '../assets/Portfolio/urbannest.png';
-import backpackImg from '../assets/Portfolio/backpackwander.png';
-import placeholderImg from '../assets/Portfolio/bazaio.png';
+import bazarImg from '../assets/Portfolio/bazario.png';
+import urbanImg from '../assets/Portfolio/urban.png';
+import backpackImg from '../assets/Portfolio/backpack.png';
+import placeholderImg from '../assets/Portfolio/bazario.png';
 
 const projects = [
   {
