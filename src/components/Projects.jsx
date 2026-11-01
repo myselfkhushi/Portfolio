@@ -3,9 +3,9 @@ import bazarImg from '../assets/Portfolio/bazario.png';
 import urbanImg from '../assets/Portfolio/urban.png';
 import backpackImg from '../assets/Portfolio/backpack.png';
 import feniImg from '../assets/Portfolio/feni.png';
-import pharmaImg from '../assets/Portfolio/urban.png';
-import orafolImg from '../assets/Portfolio/urban.png';
-import gulfImg from '../assets/Portfolio/urban.png';
+import pharmaImg from '../assets/Portfolio/pharma.png';
+import orafolImg from '../assets/Portfolio/orafol.png';
+import gulfImg from '../assets/Portfolio/gulf.png';
 
 
 const projects = [
