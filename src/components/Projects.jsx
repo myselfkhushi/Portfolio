@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import kumarImg from '../assets/Portfolio/kumar_music.png';
-import cinestreamImg from '../assets/Portfolio/cinestream.jpg';
-import devdeskImg from '../assets/Portfolio/devdesk.jpg';
+import bazarImg from '../assets/Portfolio/bazaio.png';
+
 
 const projects = [
   {
     id: 1,
-    title: "Bazaio",
-    urlSlug: "kumarvisuals.com/store",
+    title: "Bazaio E-Commerce",
+    urlSlug: "bazaio.com/store",
     shortDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering...",
     fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, and an administrative order management dashboard.",
     highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
-    image: kumarImg,
+    image: bazarImg,
     imageStyle: "object-cover object-top",
     liveUrl: "https://portfolio-khushi-7072.vercel.app/"
   },
