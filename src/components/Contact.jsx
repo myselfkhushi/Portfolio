@@ -52,6 +52,7 @@ const Contact = () => {
 
           {/* Quick Copy Email Pill */}
           <div className="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 border border-zinc-300/50 shadow-md text-xs sm:text-sm">
+                <a href={`mailto:${emailAddress}`} className="px-3 py-1 rounded-full bg-zinc-100/50 text-zinc-950 border border-zinc-300/50 hover:bg-zinc-950 hover:text-white transition-all text-xs font-bold cursor-pointer">Email Me</a>
             <span className="text-zinc-300 font-mono select-all">
               {emailAddress}
             </span>
