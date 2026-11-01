@@ -13,7 +13,7 @@ const projects = [
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
     image: bazarImg,
     imageStyle: "object-cover object-top",
-    liveUrl: "https://portfolio-khushi-7072.vercel.app/"
+    liveUrl: "https://bazario-coral.vercel.app/"
   },
  
  
