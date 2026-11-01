@@ -17,6 +17,32 @@ const projects = [
   },
  
  
+,
+    {
+      id: 2,
+      title: "Urban Nest Interiors",
+      urlSlug: "urbannestinteriors.co.uk",
+      shortDesc: "A modern interior design portfolio showcasing high‑end residential projects.",
+      fullDesc: "Urban Nest Interiors provides a showcase of premium interior design projects, highlighting clean aesthetics, material selections, and spatial planning for luxury homes.",
+      highlights: ["Design Strategy", "3D Renderings", "Client Collaboration"],
+      tags: ["React.js", "TailwindCSS", "Design", "Portfolio"],
+      image: bazarImg,
+      imageStyle: "object-cover object-center",
+      liveUrl: "https://urbannestinteriors.co.uk/"
+    }
+    ,
+    {
+      id: 3,
+      title: "Backpack Wander",
+      urlSlug: "backpackwander.com",
+      shortDesc: "A travel blog and gear review site focusing on backpacking adventures and equipment recommendations.",
+      fullDesc: "Backpack Wander offers in‑depth travel guides, personal stories from the road, and detailed gear reviews to help backpackers plan trips and choose the right equipment.",
+      highlights: ["Travel Guides", "Gear Reviews", "Community Stories"],
+      tags: ["React.js", "TailwindCSS", "Content", "Blog"],
+      image: bazarImg,
+      imageStyle: "object-cover object-center",
+      liveUrl: "https://www.backpackwander.com/"
+    }
 ];
 
 const Projects = () => {
