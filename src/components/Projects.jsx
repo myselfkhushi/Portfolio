@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import bazarImg from '../assets/Portfolio/bazario.png';
 import urbanImg from '../assets/Portfolio/urban.png';
 import backpackImg from '../assets/Portfolio/backpack.png';
+import feniImg from '../assets/Portfolio/feni.png';
+import pharmaImg from '../assets/Portfolio/urban.png';
+import orafolImg from '../assets/Portfolio/urban.png';
+import gulfImg from '../assets/Portfolio/urban.png';
 
 
 const projects = [
@@ -25,7 +29,7 @@ const projects = [
     fullDesc: "Feni Finance provides a comprehensive suite of digital financial solutions, including online payments, loan applications, and financial analytics for businesses and individuals.",
     highlights: ["Payments", "Loans", "Analytics"],
     tags: ["React.js", "TailwindCSS", "Fintech", "Payments"],
-    image: bazarImg,
+    image: feniImg,
     imageStyle: "object-contain object-center",
     liveUrl: "https://www.feni.finance/"
   },
@@ -61,7 +65,7 @@ const projects = [
     fullDesc: "Pharmdlive offers a seamless experience for ordering prescriptions online, teleconsultations with pharmacists, and rapid medication delivery to homes.",
     highlights: ["Online Prescriptions", "Telepharmacy", "Delivery"],
     tags: ["React.js", "TailwindCSS", "Healthcare", "E-commerce"],
-    image: bazarImg,
+    image: pharmaImg,
     imageStyle: "object-cover object-center",
     liveUrl: "https://pharmdlive.com/"
   },
@@ -73,7 +77,7 @@ const projects = [
     fullDesc: "Orafol Front provides an interactive UI for managing campaigns, tracking metrics, and integrating with Missio services for automated marketing workflows.",
     highlights: ["Campaign Management", "Analytics", "Integrations"],
     tags: ["React.js", "TailwindCSS", "Dashboard", "Marketing"],
-    image: bazarImg,
+    image: orafolImg,
     imageStyle: "object-cover object-center",
     liveUrl: "https://orafol-front.missio.io/"
   },
@@ -85,7 +89,7 @@ const projects = [
     fullDesc: "Gulf EL offers a comprehensive catalogue of electronics, featuring detailed product pages, secure checkout, and regional shipping options across the Gulf countries.",
     highlights: ["Wide Catalogue", "Secure Checkout", "Regional Shipping"],
     tags: ["React.js", "TailwindCSS", "E-Commerce", "Retail"],
-    image: bazarImg,
+    image: gulfImg,
     imageStyle: "object-cover object-center",
     liveUrl: "https://www.gulf-el.com/"
   }
