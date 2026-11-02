@@ -158,16 +158,16 @@ const Projects = () => {
                     <button onClick={() => toggleExpand(project.id)} className="mt-1 text-xs font-semibold text-zinc-700 hover:text-zinc-950 underline underline-offset-4 cursor-pointer transition-colors">
                       {isExpanded ? "Show less" : "Read more"}
                     </button>
-                    <div className="mt-4 pt-3 border-t border-zinc-200/60 flex items-center gap-2 text-[11px] text-zinc-500 font-mono">
+                    <div className="mt-3 pt-2.5 border-t border-zinc-200/60 flex items-center gap-1.5 text-[10px] text-zinc-400 font-mono truncate">
                       {project.highlights.map((h, i) => (
-                        <span key={i} className="inline-flex items-center gap-1">
-                          {i > 0 && <span className="text-zinc-500">&bull;</span>}{h}
+                        <span key={i} className="inline-flex items-center gap-1 whitespace-nowrap">
+                          {i > 0 && <span className="text-zinc-300">&bull;</span>}{h}
                         </span>
                       ))}
                     </div>
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <div className="flex flex-wrap gap-1.5 mt-2.5">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-zinc-100/50 text-zinc-700 border border-zinc-300/50">{tag}</span>
+                        <span key={tag} className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100/50 text-zinc-500 border border-zinc-200/50">{tag}</span>
                       ))}
                     </div>
                   </div>
