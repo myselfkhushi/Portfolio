@@ -150,21 +150,7 @@ const Intro = () => {
                   Active
                 </span>
               </div>
-              {/* Experience & Stats */}
-              <div className="mt-3 grid grid-cols-3 gap-2 text-center">
-                <div className="py-2 rounded-lg bg-zinc-950 text-white">
-                  <span className="block text-sm font-extrabold">2+</span>
-                  <span className="text-[9px] font-medium opacity-70">Years Exp.</span>
-                </div>
-                <div className="py-2 rounded-lg bg-zinc-100 border border-zinc-200/50">
-                  <span className="block text-sm font-extrabold text-zinc-950">7+</span>
-                  <span className="text-[9px] font-medium text-zinc-500">Projects</span>
-                </div>
-                <div className="py-2 rounded-lg bg-zinc-100 border border-zinc-200/50">
-                  <span className="block text-sm font-extrabold text-zinc-950">MERN</span>
-                  <span className="text-[9px] font-medium text-zinc-500">Stack</span>
-                </div>
-              </div>
+
               <div className="mt-3 flex flex-wrap gap-1.5 text-[11px] text-zinc-600">
                 <span className="px-2 py-0.5 rounded bg-zinc-100/70 border border-zinc-200/50">React</span>
                 <span className="px-2 py-0.5 rounded bg-zinc-100/70 border border-zinc-200/50">Node.js</span>
