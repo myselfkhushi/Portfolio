@@ -151,25 +151,22 @@ const Projects = () => {
 
                   {/* Card Body */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-zinc-950 tracking-tight transition-colors">{project.title}</h3>
-                    <p className="text-sm text-zinc-500 leading-relaxed mt-2.5">
+                    <div>
+                      <h3 className="text-xl font-bold text-zinc-950 tracking-tight transition-colors">{project.title}</h3>
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-100 text-zinc-600 border border-zinc-200/60 leading-tight">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-sm text-zinc-500 leading-relaxed mt-3">
                       {isExpanded ? project.fullDesc : project.shortDesc}
                     </p>
-                    <button onClick={() => toggleExpand(project.id)} className="mt-1 text-xs font-semibold text-zinc-700 hover:text-zinc-950 underline underline-offset-4 cursor-pointer transition-colors">
+                    <button onClick={() => toggleExpand(project.id)} className="mt-1.5 text-xs font-semibold text-zinc-700 hover:text-zinc-950 underline underline-offset-4 cursor-pointer transition-colors">
                       {isExpanded ? "Show less" : "Read more"}
                     </button>
-                    <div className="mt-3 pt-2.5 border-t border-zinc-200/60 flex items-center gap-1.5 text-[10px] text-zinc-400 font-mono truncate">
-                      {project.highlights.map((h, i) => (
-                        <span key={i} className="inline-flex items-center gap-1 whitespace-nowrap">
-                          {i > 0 && <span className="text-zinc-300">&bull;</span>}{h}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex flex-wrap gap-1.5 mt-2.5">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100/50 text-zinc-500 border border-zinc-200/50">{tag}</span>
-                      ))}
-                    </div>
                   </div>
                 </div>
                 {/* Footer */}
