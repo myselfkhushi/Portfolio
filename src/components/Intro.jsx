@@ -26,7 +26,7 @@ const Intro = () => {
             {/* Availability Status Badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-zinc-200/50 text-xs font-medium text-zinc-700 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Available for full-time roles & projects</span>
+              <span>Available for freelance project & integration</span>
             </div>
           </div>
 
