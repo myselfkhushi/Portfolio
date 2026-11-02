@@ -13,7 +13,7 @@ const projects = [
     id: 1,
     title: "Bazaio E-Commerce",
     urlSlug: "bazaio.com/store",
-    shortDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering...",
+    shortDesc: "Full-stack MERN e-commerce platform with secure JWT authentication, online payments, and real-time inventory management.",
     fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, and an administrative order management dashboard.",
     highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
     tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
@@ -25,7 +25,7 @@ const projects = [
     id: 2,
     title: "Feni Finance",
     urlSlug: "feni.finance",
-    shortDesc: "A fintech platform offering digital financial services, payment processing, and loan management.",
+    shortDesc: "Modern fintech platform offering seamless digital financial services, online payment processing, and loan management.",
     fullDesc: "Feni Finance provides a comprehensive suite of digital financial solutions, including online payments, loan applications, and financial analytics for businesses and individuals.",
     highlights: ["Payments", "Loans", "Analytics"],
     tags: ["React.js", "TailwindCSS", "Fintech", "Payments"],
@@ -37,7 +37,7 @@ const projects = [
     id: 3,
     title: "Urban Nest Interiors",
     urlSlug: "urbannestinteriors.co.uk",
-    shortDesc: "A modern interior design portfolio showcasing high‑end residential projects.",
+    shortDesc: "High-end interior design portfolio showcasing bespoke residential projects, spatial planning, and 3D architectural visuals.",
     fullDesc: "Urban Nest Interiors provides a showcase of premium interior design projects, highlighting clean aesthetics, material selections, and spatial planning for luxury homes.",
     highlights: ["Design Strategy", "3D Renderings", "Client Collaboration"],
     tags: ["React.js", "TailwindCSS", "Design", "Portfolio"],
@@ -49,7 +49,7 @@ const projects = [
     id: 4,
     title: "Backpack Wander",
     urlSlug: "backpackwander.com",
-    shortDesc: "A travel blog and gear review site focusing on backpacking adventures and equipment recommendations.",
+    shortDesc: "Adventure travel blog and gear review platform featuring comprehensive backpacking guides and gear recommendations.",
     fullDesc: "Backpack Wander offers in‑depth travel guides, personal stories from the road, and detailed gear reviews to help backpackers plan trips and choose the right equipment.",
     highlights: ["Travel Guides", "Gear Reviews", "Community Stories"],
     tags: ["React.js", "TailwindCSS", "Content", "Blog"],
@@ -61,7 +61,7 @@ const projects = [
     id: 5,
     title: "Pharmdlive",
     urlSlug: "pharmdlive.com",
-    shortDesc: "A platform connecting pharmacies with patients for online prescriptions and medication delivery.",
+    shortDesc: "Healthcare platform connecting pharmacies with patients for digital prescriptions, teleconsultations, and rapid delivery.",
     fullDesc: "Pharmdlive offers a seamless experience for ordering prescriptions online, teleconsultations with pharmacists, and rapid medication delivery to homes.",
     highlights: ["Online Prescriptions", "Telepharmacy", "Delivery"],
     tags: ["React.js", "TailwindCSS", "Healthcare", "E-commerce"],
@@ -73,7 +73,7 @@ const projects = [
     id: 6,
     title: "Orafol Front",
     urlSlug: "orafol-front.missio.io",
-    shortDesc: "Front‑end dashboard for Orafol, a marketing automation platform.",
+    shortDesc: "Interactive marketing automation dashboard designed for campaign tracking, real-time analytics, and workflow integration.",
     fullDesc: "Orafol Front provides an interactive UI for managing campaigns, tracking metrics, and integrating with Missio services for automated marketing workflows.",
     highlights: ["Campaign Management", "Analytics", "Integrations"],
     tags: ["React.js", "TailwindCSS", "Dashboard", "Marketing"],
@@ -85,7 +85,7 @@ const projects = [
     id: 7,
     title: "Gulf EL",
     urlSlug: "gulf-el.com",
-    shortDesc: "Electronics e‑commerce site serving the Gulf region with a wide range of consumer electronics.",
+    shortDesc: "Consumer electronics e-commerce store serving the Gulf region with extensive product catalogues and regional shipping.",
     fullDesc: "Gulf EL offers a comprehensive catalogue of electronics, featuring detailed product pages, secure checkout, and regional shipping options across the Gulf countries.",
     highlights: ["Wide Catalogue", "Secure Checkout", "Regional Shipping"],
     tags: ["React.js", "TailwindCSS", "E-Commerce", "Retail"],
@@ -153,7 +153,7 @@ const Projects = () => {
                   <div className="p-6">
                     <div>
                       <h3 className="text-xl font-bold text-zinc-950 tracking-tight transition-colors">{project.title}</h3>
-                      <div className="flex flex-wrap gap-1 mt-2">
+                      <div className="flex flex-wrap gap-1 mt-2 min-h-[26px]">
                         {project.tags.map((tag) => (
                           <span key={tag} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-100 text-zinc-600 border border-zinc-200/60 leading-tight">
                             {tag}
@@ -161,10 +161,12 @@ const Projects = () => {
                         ))}
                       </div>
                     </div>
-                    <p className="text-sm text-zinc-500 leading-relaxed mt-3">
-                      {isExpanded ? project.fullDesc : project.shortDesc}
-                    </p>
-                    <button onClick={() => toggleExpand(project.id)} className="mt-1.5 text-xs font-semibold text-zinc-700 hover:text-zinc-950 underline underline-offset-4 cursor-pointer transition-colors">
+                    <div className="mt-3 min-h-[4rem]">
+                      <p className={`text-sm text-zinc-500 leading-relaxed ${isExpanded ? '' : 'line-clamp-3'}`}>
+                        {isExpanded ? project.fullDesc : project.shortDesc}
+                      </p>
+                    </div>
+                    <button onClick={() => toggleExpand(project.id)} className="mt-2 text-xs font-semibold text-zinc-700 hover:text-zinc-950 underline underline-offset-4 cursor-pointer transition-colors">
                       {isExpanded ? "Show less" : "Read more"}
                     </button>
                   </div>
