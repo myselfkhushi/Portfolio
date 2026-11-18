@@ -9,20 +9,9 @@ import gulfImg from '../assets/Portfolio/gulf.png';
 
 
 const projects = [
+  
   {
     id: 1,
-    title: "Bazaio E-Commerce",
-    urlSlug: "bazaio.com/store",
-    shortDesc: "Full-stack MERN e-commerce platform with secure JWT authentication, online payments, and real-time inventory management.",
-    fullDesc: "A high-performance full-stack e-commerce platform built with the MERN stack. Features secure JWT authentication, automated payment gateway integration, dynamic catalog filtering, real-time inventory management, and an administrative order management dashboard.",
-    highlights: ["JWT Auth", "Cart Drawer", "Inventory Sync"],
-    tags: ["React.js", "Node.js", "MongoDB", "E-Commerce", "REST API"],
-    image: bazarImg,
-    imageStyle: "object-contain",
-    liveUrl: "https://bazario-coral.vercel.app/"
-  },
-  {
-    id: 2,
     title: "Feni Finance",
     urlSlug: "feni.finance",
     shortDesc: "Modern fintech platform offering seamless digital financial services, online payment processing, and loan management.",
@@ -34,7 +23,7 @@ const projects = [
     liveUrl: "https://www.feni.finance/"
   },
   {
-    id: 3,
+    id: 2,
     title: "Urban Nest Interiors",
     urlSlug: "urbannestinteriors.co.uk",
     shortDesc: "High-end interior design portfolio showcasing bespoke residential projects, spatial planning, and 3D architectural visuals.",
@@ -46,7 +35,7 @@ const projects = [
     liveUrl: "https://urbannestinteriors.co.uk/"
   },
   {
-    id: 4,
+    id: 3,
     title: "Backpack Wander",
     urlSlug: "backpackwander.com",
     shortDesc: "Adventure travel blog and gear review platform featuring comprehensive backpacking guides and gear recommendations.",
@@ -58,7 +47,7 @@ const projects = [
     liveUrl: "https://www.backpackwander.com/"
   },
   {
-    id: 5,
+    id: 4,
     title: "Pharmdlive",
     urlSlug: "pharmdlive.com",
     shortDesc: "Healthcare platform connecting pharmacies with patients for digital prescriptions, teleconsultations, and rapid delivery.",
@@ -70,7 +59,7 @@ const projects = [
     liveUrl: "https://pharmdlive.com/"
   },
   {
-    id: 6,
+    id: 5,
     title: "Orafol Front",
     urlSlug: "orafol-front.missio.io",
     shortDesc: "Interactive marketing automation dashboard designed for campaign tracking, real-time analytics, and workflow integration.",
@@ -82,7 +71,7 @@ const projects = [
     liveUrl: "https://orafol-front.missio.io/"
   },
   {
-    id: 7,
+    id: 6,
     title: "Gulf EL",
     urlSlug: "gulf-el.com",
     shortDesc: "Consumer electronics e-commerce store serving the Gulf region with extensive product catalogues and regional shipping.",
